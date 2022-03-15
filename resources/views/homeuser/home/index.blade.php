@@ -54,7 +54,7 @@
                     <div class="owl-item">
                         <div class="col-sm-12">
                         <div class="ex-product"><a href="/home/product-detail/{{$product_1->id}}"><img src="{{asset('/uploads/images/'.$product_1->product_img.'')}}" alt="{{$product_1->product_name}}"/></a>
-                            <h4 class="shop-item-title font-alt"><a href="/home/product-detail/{{$product_1->id}}">{{$product_1->product_name}}</a></h4>{{number_format($product_1->unit_price,0,'','.')}}đ<
+                            <h4 class="shop-item-title font-alt"><a href="/home/product-detail/{{$product_1->id}}">{{$product_1->product_name}}</a></h4>{{number_format($product_1->unit_price,0,'','.')}}đ
                         </div>
                         </div>
                     </div>
