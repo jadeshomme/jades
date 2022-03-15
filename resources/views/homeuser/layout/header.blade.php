@@ -125,7 +125,7 @@
         <!--                    |-->
         <!--                    button.search-btn(type='submit')-->
         <!--                        i.fa.fa-search-->
-        <li class="dropdown"><a class="dropdown-toggle" href="documentation.html" data-toggle="dropdown">Documentation</a>
+        <li class="dropdown"><a class="dropdown-toggle" href="documentation.html" data-toggle="dropdown">Hỗ trợ</a>
         <ul class="dropdown-menu">
             <li><a href="documentation.html#contact">Contact Form</a></li>
             <li><a href="documentation.html#reservation">Reservation Form</a></li>
