@@ -6,74 +6,23 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6 col-sm-offset-3">
-            <h2 class="module-title font-alt">Latest in clothing</h2>
+            <h2 class="module-title font-alt">Sản phẩm bán chạy</h2>
           </div>
         </div>
-        <div class="row multi-columns-row">
-          <div class="col-sm-6 col-md-3 col-lg-3">
-            <div class="shop-item">
-              <div class="shop-item-image"><img src="assets/images/shop/product-7.jpg" alt="Accessories Pack"/>
-                <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket">Add To Cart</span></a></div>
-              </div>
-              <h4 class="shop-item-title font-alt"><a href="#">Accessories Pack</a></h4>£9.00
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3">
-        <div class="shop-item">
-            <div class="shop-item-image"><img src="assets/images/shop/product-8.jpg" alt="Men’s Casual Pack"/>
-            <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket">Add To Cart</span></a></div>
-            </div>
-            <h4 class="shop-item-title font-alt"><a href="#">Men’s Casual Pack</a></h4>£12.00
-        </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3">
-        <div class="shop-item">
-            <div class="shop-item-image"><img src="assets/images/shop/product-9.jpg" alt="Men’s Garb"/>
-            <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket">Add To Cart</span></a></div>
-            </div>
-            <h4 class="shop-item-title font-alt"><a href="#">Men’s Garb</a></h4>£6.00
-        </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3">
-        <div class="shop-item">
-            <div class="shop-item-image"><img src="assets/images/shop/product-10.jpg" alt="Cold Garb"/>
-            <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket">Add To Cart</span></a></div>
-            </div>
-            <h4 class="shop-item-title font-alt"><a href="#">Cold Garb</a></h4>£14.00
-        </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3">
-        <div class="shop-item">
-            <div class="shop-item-image"><img src="assets/images/shop/product-11.jpg" alt="Accessories Pack"/>
-            <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket">Add To Cart</span></a></div>
-            </div>
-            <h4 class="shop-item-title font-alt"><a href="#">Accessories Pack</a></h4>£9.00
-        </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3">
-        <div class="shop-item">
-            <div class="shop-item-image"><img src="assets/images/shop/product-12.jpg" alt="Men’s Casual Pack"/>
-            <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket">Add To Cart</span></a></div>
-            </div>
-            <h4 class="shop-item-title font-alt"><a href="#">Men’s Casual Pack</a></h4>£12.00
-        </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3">
-        <div class="shop-item">
-            <div class="shop-item-image"><img src="assets/images/shop/product-13.jpg" alt="Men’s Garb"/>
-            <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket">Add To Cart</span></a></div>
-            </div>
-            <h4 class="shop-item-title font-alt"><a href="#">Men’s Garb</a></h4>£6.00
-        </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3">
-        <div class="shop-item">
-            <div class="shop-item-image"><img src="assets/images/shop/product-14.jpg" alt="Cold Garb"/>
-            <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket">Add To Cart</span></a></div>
-            </div>
-            <h4 class="shop-item-title font-alt"><a href="#">Cold Garb</a></h4>£14.00
-        </div>
-        </div>
+        @foreach ($get_product as $product_2)
+            @if ($product_2->status == 1 && $product_2->collection==2)
+                <div class="row multi-columns-row">
+                <div class="col-sm-6 col-md-3 col-lg-3">
+                    <div class="shop-item">
+                    <div class="shop-item-image"><img src="{{asset('/uploads/images/'.$product_2->product_img.'')}}" alt="{{$product_2->product_name}}"/>
+                        <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket">Add To Cart</span></a></div>
+                    </div>
+                    <h4 class="shop-item-title font-alt"><a href="/home/product-detail/{{$product_2->id}}">{{$product_2->product_name}}</a></h4>{{number_format($product_2->price_sale,0,'','.')}}đ
+                    </div>
+                </div>
+            @endif
+        @endforeach
+
     </div>
     <div class="row mt-30">
         <div class="col-sm-12 align-center"><a class="btn btn-b btn-round" href="#">See all products</a></div>
@@ -94,54 +43,23 @@
     <div class="container">
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
-        <h2 class="module-title font-alt">Exclusive products</h2>
+        <h2 class="module-title font-alt">Sản phẩm mới</h2>
         <div class="module-subtitle font-serif">The languages only differ in their grammar, their pronunciation and their most common words.</div>
         </div>
     </div>
     <div class="row">
         <div class="owl-carousel text-center" data-items="5" data-pagination="false" data-navigation="false">
-        <div class="owl-item">
-            <div class="col-sm-12">
-            <div class="ex-product"><a href="#"><img src="assets/images/shop/product-1.jpg" alt="Leather belt"/></a>
-                <h4 class="shop-item-title font-alt"><a href="#">Leather belt</a></h4>£12.00
-            </div>
-            </div>
-        </div>
-        <div class="owl-item">
-            <div class="col-sm-12">
-            <div class="ex-product"><a href="#"><img src="assets/images/shop/product-2.jpg" alt="Derby shoes"/></a>
-                <h4 class="shop-item-title font-alt"><a href="#">Derby shoes</a></h4>£54.00
-            </div>
-            </div>
-        </div>
-        <div class="owl-item">
-            <div class="col-sm-12">
-            <div class="ex-product"><a href="#"><img src="assets/images/shop/product-3.jpg" alt="Leather belt"/></a>
-                <h4 class="shop-item-title font-alt"><a href="#">Leather belt</a></h4>£19.00
-            </div>
-            </div>
-        </div>
-        <div class="owl-item">
-            <div class="col-sm-12">
-            <div class="ex-product"><a href="#"><img src="assets/images/shop/product-4.jpg" alt="Leather belt"/></a>
-                <h4 class="shop-item-title font-alt"><a href="#">Leather belt</a></h4>£14.00
-            </div>
-            </div>
-        </div>
-        <div class="owl-item">
-            <div class="col-sm-12">
-            <div class="ex-product"><a href="#"><img src="assets/images/shop/product-5.jpg" alt="Chelsea boots"/></a>
-                <h4 class="shop-item-title font-alt"><a href="#">Chelsea boots</a></h4>£44.00
-            </div>
-            </div>
-        </div>
-        <div class="owl-item">
-            <div class="col-sm-12">
-            <div class="ex-product"><a href="#"><img src="assets/images/shop/product-6.jpg" alt="Leather belt"/></a>
-                <h4 class="shop-item-title font-alt"><a href="#">Leather belt</a></h4>£19.00
-            </div>
-            </div>
-        </div>
+            @foreach ($get_product as $product_1)
+                @if ($product_1->status == 1 && $product_1->collection==1)
+                    <div class="owl-item">
+                        <div class="col-sm-12">
+                        <div class="ex-product"><a href="/home/product-detail/{{$product_1->id}}"><img src="{{asset('/uploads/images/'.$product_1->product_img.'')}}" alt="{{$product_1->product_name}}"/></a>
+                            <h4 class="shop-item-title font-alt"><a href="/home/product-detail/{{$product_1->id}}">{{$product_1->product_name}}</a></h4>{{number_format($product_1->unit_price,0,'','.')}}đ<
+                        </div>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
         </div>
     </div>
     </div>
