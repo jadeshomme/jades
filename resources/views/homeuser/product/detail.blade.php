@@ -1,301 +1,266 @@
 @extends('homeuser.layout.master')
-@section('link')
-    <link href="{{asset('/pageuser/css/product_page.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="https://devtest.baokim.vn:9403/css/bk.css">
-    <style>
-        header .main_header {
-            position: relative;
-            z-index: 0 !important;
-        }
-        header .main_nav {
-            position: relative;
-            z-index: 0 !important;
-        }
-    </style>
-@endsection
- <!-- BK MODAL -->
- <div id='bk-modal'></div>
- <!-- END BK MODAL -->
+
 @section('home')
-    <div class="container margin_30">
-
-        <form action="{{ route('homePage.cart.save') }}" method="post">
-            @csrf
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="all">
-                        <input name="productId_hidden" type="hidden" value="{{$get_product->id}}" />
-                        <div class="slider">
-                            <div class="owl-carousel owl-theme main">
-                                <div style="background-image: url({{asset('/uploads/images/'.$get_product->product_img.'')}});" class="item-box"></div>
-
-                                @foreach ($get_product->productImg as $item)
-                                    <div style="background-image: url({{$item->image}});" class="item-box"></div>
-                                @endforeach
-                            </div>
-                            <div class="left nonl"><i class="ti-angle-left"></i></div>
-                            <div class="right"><i class="ti-angle-right"></i></div>
-                        </div>
-                        <div class="slider-two">
-                            <div class="owl-carousel owl-theme thumbs">
-                                <div style="background-image: url({{asset('/uploads/images/'.$get_product->product_img.'')}});" class="item active"></div>
-                                @foreach ($get_product->productImg as $item)
-                                    <div style="background-image: url({{$item->image}});" class="item active"></div>
-                                @endforeach
-                            </div>
-                            <div class="left-t nonl-t"></div>
-                            <div class="right-t"></div>
-                        </div>
-                    </div>
+<style>
+    .navbar-custom {
+        background-color: rgba(10, 10, 10, 0.9) !important;
+    }
+    .navbar-transparent {
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+</style>
+<div class="main">
+    <form action="{{ route('homePage.cart.save') }}" method="post">
+        @csrf
+        <section class="module">
+            <div class="container">
+                <input name="productId_hidden" type="hidden" value="{{$get_product->id}}" />
+                <div class="row">
+                <div class="col-sm-6 mb-sm-40"><a class="gallery" href="{{asset('/uploads/images/'.$get_product->product_img.'')}}"><img src="{{asset('/uploads/images/'.$get_product->product_img.'')}}" alt="Single Product Image"/></a>
+                    <ul class="product-gallery">
+                    @foreach ($get_product->productImg as $item)
+                        <li><a class="gallery" href="{{$item->image}}"></a><img src="{{$item->image}}" alt="Single Product"/></li>
+                    @endforeach
+                    </ul>
                 </div>
-                <div class="col-md-6">
-                    <div class="breadcrumbs">
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Category</a></li>
-                            <li>Page active</li>
-                        </ul>
+                <div class="col-sm-6">
+                    <div class="row">
+                    <div class="col-sm-12">
+                        <h1 class="product-title font-alt">{{$get_product->product_name}}</h1>
                     </div>
-                    <!-- /page_header -->
-                    <div class="prod_info">
-                        <h1 class="bk-product-name">{{$get_product->product_name}}</h1>
-                        {{-- <span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i><em>4 reviews</em></span> --}}
-                        <p><small>Mã sản phẩm: {{$get_product->product_code}}</small><br>{{$get_product->product_description}}</p>
-                        <img class="bk-product-image d-none" src="{{asset('/uploads/images/'.$get_product->product_img.'')}}" alt="">
-                        <div class="prod_options">
-                            <div class="row">
-                                {{-- <label class="col-xl-5 col-lg-5  col-md-6 col-6 pt-0"><strong>Color</strong></label>
-                                <div class="col-xl-4 col-lg-5 col-md-6 col-6 colors">
-                                    <ul>
-                                        <li><a href="#0" class="color color_1 active"></a></li>
-                                        <li><a href="#0" class="color color_2"></a></li>
-                                        <li><a href="#0" class="color color_3"></a></li>
-                                        <li><a href="#0" class="color color_4"></a></li>
-                                    </ul>
-                                </div> --}}
-                            </div>
-                            {{-- <div class="row">
-                                <label class="col-xl-5 col-lg-5 col-md-6 col-6"><strong>Size</strong> - Size Guide <a href="#0" data-toggle="modal" data-target="#size-modal"><i class="ti-help-alt"></i></a></label>
-                                <div class="col-xl-4 col-lg-5 col-md-6 col-6">
-                                    <div class="custom-select-form">
-                                        <select class="wide">
-                                            <option value="" selected>Small (S)</option>
-                                            <option value="">M</option>
-                                            <option value=" ">L</option>
-                                            <option value=" ">XL</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div> --}}
-                            <div class="row">
-                                <label class="col-xl-5 col-lg-5  col-md-6 col-6"><strong>Số lượng</strong></label>
-                                <div class="col-xl-4 col-lg-5 col-md-6 col-6">
-                                    <div class="numbers-row">
-                                        <input type="text" value="1" class="bk-product-qty" id="quantity_1" class="qty2" name="qty">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <input class="bk-product-property" type="hidden" value="{{$get_product->product_code}}" />
-                        <div class="row">
-                            <div class="col-lg-5 col-md-6">
-                                <div class="price_main"><span class="new_price bk-product-price">{{ number_format($get_product->price_sale) }}đ</span><span class="percentage">Giảm giá</span> <span class="old_price">{{ number_format($get_product->unit_price) }}đ</span></div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class=""><button type="submit" class="btn_1">Thêm giỏ hàng</button></div>
-                            </div>
-                            <!-- BK BUTTON -->
-                            <div class='bk-btn'></div>
-                            <!-- END BK BUTTON -->
-
+                    </div>
+                    <div class="row mb-20">
+                    <div class="col-sm-12"><span><i class="fa fa-star star"></i></span><span><i class="fa fa-star star"></i></span><span><i class="fa fa-star star"></i></span><span><i class="fa fa-star star"></i></span><span><i class="fa fa-star star-off"></i></span><a class="open-tab section-scroll" href="#reviews"> Mã sản phẩm :{{$get_product->product_code}}</a>
+                    </div>
+                    </div>
+                    <div class="row mb-20">
+                    <div class="col-sm-12">
+                        <div class="price font-alt"><span class="amount">{{ number_format($get_product->price_sale) }}đ</span></div>
+                    </div>
+                    </div>
+                    <div class="row mb-20">
+                    <div class="col-sm-12">
+                        <div class="description">
+                        <p>{{$get_product->product_description}}</p>
                         </div>
                     </div>
-                    <!-- /prod_info -->
-                    {{-- <div class="product_actions">
-                        <ul>
-                            <li>
-                                <a href="#"><i class="ti-heart"></i><span>Add to Wishlist</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="ti-control-shuffle"></i><span>Add to Compare</span></a>
-                            </li>
-                        </ul>
+                    </div>
+                    <div class="row mb-20">
+                    <div class="col-sm-4 mb-sm-20">
+                        <input class="form-control input-lg" type="number" name="qty" value="1" max="40" min="1" required="required"/>
+                    </div>
+                    <div class="col-sm-8"><button type="submit" class="btn btn-lg btn-block btn-round btn-b">Thêm vào giỏ hàng</button></div>
+                    </div>
+                    <div class="row mb-20">
+                    {{-- <div class="col-sm-12">
+                        <div class="product_meta">Categories:<a href="#"> Man, </a><a href="#">Clothing, </a><a href="#">T-shirts</a>
+                        </div>
                     </div> --}}
-                    <!-- /product_actions -->
-                </div>
-            </div>
-        </form>
-        <!-- /row -->
-    </div>
-    <!-- /container -->
-
-    <div class="tabs_product">
-        <div class="container">
-            <ul class="nav nav-tabs" role="tablist">
-                <li class="nav-item">
-                    <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab">Chi tiết</a>
-                </li>
-                <li class="nav-item">
-                    <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">Mô tả ngắn</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- /tabs_product -->
-    <div class="tab_content_wrapper">
-        <div class="container">
-            <div class="tab-content" role="tablist">
-                <div id="pane-A" class="card tab-pane fade active show" role="tabpanel" aria-labelledby="tab-A">
-                    <div class="card-header" role="tab" id="heading-A">
-                        <h5 class="mb-0">
-                            <a class="collapsed" data-toggle="collapse" href="#collapse-A" aria-expanded="false" aria-controls="collapse-A">
-                                Chi tiết
-                            </a>
-                        </h5>
                     </div>
-                    <div id="collapse-A" class="collapse" role="tabpanel" aria-labelledby="heading-A">
-                        <div class="card-body">
-                            <div class="row justify-content-between">
-                                <div class="col-lg-6">
-                                    <h3>Chi tiết sản phẩm</h3>
-                                    <div class="content_product">
-                                        <p class="product_content">{{$get_product->product_content}}</p>
-                                    </div>
+                </div>
+                </div>
+                <div class="row mt-70">
+                <div class="col-sm-12">
+                    <ul class="nav nav-tabs font-alt" role="tablist">
+                    <li class="active"><a href="#description" data-toggle="tab"><span class="icon-tools-2"></span>Chi tiết sản phẩm</a></li>
+                    <li><a href="#data-sheet" data-toggle="tab"><span class="icon-tools-2"></span>Thông số</a></li>
+                    {{-- <li><a href="#reviews" data-toggle="tab"><span class="icon-tools-2"></span>Reviews (2)</a></li> --}}
+                    </ul>
+                    <div class="tab-content">
+                    <div class="tab-pane active content_product" id="description">
+                        <p class="product_content">{{$get_product->product_content}}</p>
+                    </div>
+                    <div class="tab-pane" id="data-sheet">
+                        <table class="table table-striped ds-table table-responsive">
+                        <tbody>
+                            <tr>
+                            <th>Lenght</th>
+                            <th>{{$get_product->product_length}}</th>
+                            </tr>
+                            <tr>
+                            <td>Width</td>
+                            <td>{{$get_product->product_width}}</td>
+                            </tr>
+                            <tr>
+                            <td>Height</td>
+                            <td>{{$get_product->product_height}}</td>
+                            </tr>
+                            <tr>
 
-                                </div>
-                                <div class="col-lg-5">
-                                    <h3>Thông số kĩ thuật</h3>
-                                    <div class="table-responsive">
-                                        <table class="table table-sm table-striped">
-                                            <tbody>
-                                                {{-- <tr>
-                                                    <td><strong>Color</strong></td>
-                                                    <td>Blue, Purple</td>
-                                                </tr> --}}
-                                                <tr>
-                                                    <td><strong>Kích thước</strong></td>
-                                                    <td>{{$get_product->product_length}}x{{$get_product->product_width}}x{{$get_product->product_height}}</td>
-                                                </tr>
-                                                {{-- <tr>
-                                                    <td><strong>Weight</strong></td>
-                                                    <td>0.6kg</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Manifacturer</strong></td>
-                                                    <td>Manifacturer</td>
-                                                </tr> --}}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <!-- /table-responsive -->
-                                </div>
+                        </tbody>
+                        </table>
+                    </div>
+                    {{-- <div class="tab-pane" id="reviews">
+                        <div class="comments reviews">
+                        <div class="comment clearfix">
+                            <div class="comment-avatar"><img src="" alt="avatar"/></div>
+                            <div class="comment-content clearfix">
+                            <div class="comment-author font-alt"><a href="#">John Doe</a></div>
+                            <div class="comment-body">
+                                <p>The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The European languages are members of the same family. Their separate existence is a myth.</p>
+                            </div>
+                            <div class="comment-meta font-alt">Today, 14:55 -<span><i class="fa fa-star star"></i></span><span><i class="fa fa-star star"></i></span><span><i class="fa fa-star star"></i></span><span><i class="fa fa-star star"></i></span><span><i class="fa fa-star star-off"></i></span>
+                            </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- /TAB A -->
-                <div id="pane-B" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-B">
-                    <div class="card-header" role="tab" id="heading-B">
-                        <h5 class="mb-0">
-                            <a class="collapsed" data-toggle="collapse" href="#collapse-B" aria-expanded="false" aria-controls="collapse-B">
-                                Reviews
-                            </a>
-                        </h5>
-                    </div>
-                    <div id="collapse-B" class="collapse" role="tabpanel" aria-labelledby="heading-B">
-                        <div class="card-body">
-                            <div class="row justify-content-between">
-                                <div class="col-lg-6">
-                                    <div class="review_content">
-                                        <div class="clearfix add_bottom_10">
-                                            <span class="rating"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><em>5.0/5.0</em></span>
-                                            {{-- <em>Published 54 minutes ago</em> --}}
-                                        </div>
-                                        <h4>"Mô tả ngắn sản phầm"</h4>
-                                        <p>{{$get_product->product_description}}</p>
-                                    </div>
-                                </div>
+                        <div class="comment clearfix">
+                            <div class="comment-avatar"><img src="" alt="avatar"/></div>
+                            <div class="comment-content clearfix">
+                            <div class="comment-author font-alt"><a href="#">Mark Stone</a></div>
+                            <div class="comment-body">
+                                <p>Europe uses the same vocabulary. The European languages are members of the same family. Their separate existence is a myth.</p>
+                            </div>
+                            <div class="comment-meta font-alt">Today, 14:59 -<span><i class="fa fa-star star"></i></span><span><i class="fa fa-star star"></i></span><span><i class="fa fa-star star"></i></span><span><i class="fa fa-star star-off"></i></span><span><i class="fa fa-star star-off"></i></span>
+                            </div>
                             </div>
                         </div>
-                        <!-- /card-body -->
+                        </div>
+                        <div class="comment-form mt-30">
+                        <h4 class="comment-form-title font-alt">Add review</h4>
+                        <form method="post">
+                            <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                <label class="sr-only" for="name">Name</label>
+                                <input class="form-control" id="name" type="text" name="name" placeholder="Name"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                <label class="sr-only" for="email">Name</label>
+                                <input class="form-control" id="email" type="text" name="email" placeholder="E-mail"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                <select class="form-control">
+                                    <option selected="true" disabled="">Rating</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                <textarea class="form-control" id="" name="" rows="4" placeholder="Review"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <button class="btn btn-round btn-d" type="submit">Submit Review</button>
+                            </div>
+                            </div>
+                        </form>
+                        </div>
+                    </div> --}}
                     </div>
                 </div>
-                <!-- /tab B -->
+                </div>
             </div>
-            <!-- /tab-content -->
+        </section>
+    </form>
+    <hr class="divider-w">
+    <section class="module-small">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3">
+            <h2 class="module-title font-alt">Sản phẩm cùng thể loại</h2>
+          </div>
         </div>
-        <!-- /container -->
-    </div>
-    <!-- /tab_content_wrapper -->
 
-    <div class="container margin_60_35">
-        <div class="main_title">
-            <h2>Sản phẩm liên quan</h2>
-            <span>Products</span>
-            <p></p>
-        </div>
-        <div class="owl-carousel owl-theme products_carousel">
-            @foreach ($get_product_lq as $product_lq)
-                <div class="item">
-                    <div class="grid_item">
-                        <span class="ribbon new">New</span>
-                        <figure>
-                            <a href="/home/product-detail/{{$product_lq->id}}">
-                                <img class="owl-lazy" src="{{asset('/uploads/images/'.$product_lq->product_img.'')}}" data-src="{{asset('/uploads/images/'.$product_lq->product_img.'')}}" alt="">
-                            </a>
-                        </figure>
-                        <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div>
-                        <a href="/home/product-detail/{{$product_lq->id}}">
-                            <h3>{{$product_lq->product_name}}</h3>
-                        </a>
-                        <div class="price_box">
-                            <span class="new_price">{{number_format($product_lq->unit_price,0,'','.')}}đ</span>
-                        </div>
-                        <ul>
-                            <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-                            <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
-                            <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
-                        </ul>
+        @foreach ($get_product_lq as $product_lq)
+            <div class="row multi-columns-row">
+                <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="shop-item">
+                    <div class="shop-item-image"><img src="{{asset('/uploads/images/'.$product_lq->product_img.'')}}" alt="{{$product_lq->product_name}}"/>
+                        <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket">Thêm giỏ hàng</span></a></div>
                     </div>
-                    <!-- /grid_item -->
+                    <h4 class="shop-item-title font-alt"><a href="/home/product-detail/{{$product_lq->id}}">{{$product_lq->product_name}}</a></h4>{{number_format($product_lq->unit_price,0,'','.')}}đ
                 </div>
-            @endforeach
-        </div>
-        <!-- /products_carousel -->
-    </div>
-    <!-- /container -->
+            </div>
+        @endforeach
 
-    <div class="feat">
-        <div class="container">
-            <ul>
-                <li>
-                    <div class="box">
-                        <i class="ti-gift"></i>
-                        <div class="justify-content-center">
-                            <h3>Free Shipping</h3>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="box">
-                        <i class="ti-wallet"></i>
-                        <div class="justify-content-center">
-                            <h3>Secure Payment</h3>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="box">
-                        <i class="ti-headphone-alt"></i>
-                        <div class="justify-content-center">
-                            <h3>Hỗ trợ 24/7</h3>
-                        </div>
-                    </div>
-                </li>
-            </ul>
         </div>
+      </div>
+    </section>
+    <hr class="divider-w">
+    <div class="module-small bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="widget">
+              <h5 class="widget-title font-alt">About Titan</h5>
+              <p>The languages only differ in their grammar, their pronunciation and their most common words.</p>
+              <p>Phone: +1 234 567 89 10</p>Fax: +1 234 567 89 10
+              <p>Email:<a href="#">somecompany@example.com</a></p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="widget">
+              <h5 class="widget-title font-alt">Recent Comments</h5>
+              <ul class="icon-list">
+                <li>Maria on <a href="#">Designer Desk Essentials</a></li>
+                <li>John on <a href="#">Realistic Business Card Mockup</a></li>
+                <li>Andy on <a href="#">Eco bag Mockup</a></li>
+                <li>Jack on <a href="#">Bottle Mockup</a></li>
+                <li>Mark on <a href="#">Our trip to the Alps</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="widget">
+              <h5 class="widget-title font-alt">Blog Categories</h5>
+              <ul class="icon-list">
+                <li><a href="#">Photography - 7</a></li>
+                <li><a href="#">Web Design - 3</a></li>
+                <li><a href="#">Illustration - 12</a></li>
+                <li><a href="#">Marketing - 1</a></li>
+                <li><a href="#">Wordpress - 16</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="widget">
+              <h5 class="widget-title font-alt">Popular Posts</h5>
+              <ul class="widget-posts">
+                <li class="clearfix">
+                  <div class="widget-posts-image"><a href="#"><img src="assets/images/rp-1.jpg" alt="Post Thumbnail"/></a></div>
+                  <div class="widget-posts-body">
+                    <div class="widget-posts-title"><a href="#">Designer Desk Essentials</a></div>
+                    <div class="widget-posts-meta">23 january</div>
+                  </div>
+                </li>
+                <li class="clearfix">
+                  <div class="widget-posts-image"><a href="#"><img src="assets/images/rp-2.jpg" alt="Post Thumbnail"/></a></div>
+                  <div class="widget-posts-body">
+                    <div class="widget-posts-title"><a href="#">Realistic Business Card Mockup</a></div>
+                    <div class="widget-posts-meta">15 February</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
+    <hr class="divider-d">
+    <footer class="footer bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="copyright font-alt">&copy; 2022&nbsp;<a href="/">Thiết kế , xây dựng website cho doanh nghiệp</a>,  SĐT: 0969690331</p>
+          </div>
+          <div class="col-sm-6">
+            <div class="footer-social-links"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i class="fa fa-skype"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 @endsection
 @section('javascript')
     <!-- BK JS -->

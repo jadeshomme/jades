@@ -1,7 +1,7 @@
 <nav class="navbar navbar-custom navbar-fixed-top navbar-transparent" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">Jades Homme</a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="/">Jades Homme</a>
       </div>
       <div class="collapse navbar-collapse" id="custom-collapse">
         <ul class="nav navbar-nav navbar-right">
@@ -125,7 +125,7 @@
         <!--                    |-->
         <!--                    button.search-btn(type='submit')-->
         <!--                        i.fa.fa-search-->
-        <li class="dropdown"><a class="dropdown-toggle" href="documentation.html" data-toggle="dropdown">Hỗ trợ 1</a>
+        <li class="dropdown"><a class="dropdown-toggle" href="documentation.html" data-toggle="dropdown">Hỗ trợ</a>
         <ul class="dropdown-menu">
             <li><a href="documentation.html#contact">Contact Form</a></li>
             <li><a href="documentation.html#reservation">Reservation Form</a></li>

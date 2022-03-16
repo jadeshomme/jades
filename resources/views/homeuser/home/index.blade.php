@@ -1,6 +1,8 @@
 @extends('homeuser.layout.master')
 @section('home')
 @include('homeuser.layout.slide')
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0&appId=626607088332555&autoLogAppEvents=1" nonce="0TVi6bkr"></script>
 <div class="main">
     <section class="module-small">
       <div class="container">
@@ -25,7 +27,7 @@
 
     </div>
     <div class="row mt-30">
-        <div class="col-sm-12 align-center"><a class="btn btn-b btn-round" href="#">See all products</a></div>
+        <div class="col-sm-12 align-center"><a class="btn btn-b btn-round" href="#">Toàn bộ sản phẩm</a></div>
     </div>
     </div>
 </section>
@@ -33,18 +35,18 @@
     <div class="container">
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
-        <h2 class="module-title font-alt mb-0">Be inspired. Get ahead of trends.</h2>
+        {{-- <h2 class="module-title font-alt mb-0">Be inspired. Get ahead of trends.</h2> --}}
         </div>
     </div>
     </div>
-    <div class="video-player" data-property="{videoURL:'https://www.youtube.com/watch?v=EMy5krGcoOU', containment:'.module-video', startAt:0, mute:true, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
+    <div class="video-player" data-property="{videoURL:'https://www.youtube.com/watch?v=D0_JszR9cuA', containment:'.module-video', startAt:0, mute:true, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
 </section>
 <section class="module">
     <div class="container">
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
         <h2 class="module-title font-alt">Sản phẩm mới</h2>
-        <div class="module-subtitle font-serif">The languages only differ in their grammar, their pronunciation and their most common words.</div>
+        <div class="module-subtitle font-serif">Thời trang rất quan trọng, nó khiến cuộc sống này trở nên tốt đẹp hơn. Và cũng giống như những điều tuyệt vời khác, thời trang xứng đáng được bạn đầu tư công sức chăm chút cẩn thận.</div>
         </div>
     </div>
     <div class="row">
@@ -65,7 +67,7 @@
     </div>
 </section>
 <hr class="divider-w">
-<section class="module" id="news">
+{{-- <section class="module" id="news">
     <div class="container">
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
@@ -141,7 +143,7 @@
         </div>
     </div>
     </div>
-</section>
+</section> --}}
 <hr class="divider-w">
 <section class="module-small">
     <div class="container">
@@ -149,47 +151,47 @@
         <div class="owl-carousel text-center" data-items="6" data-pagination="false" data-navigation="false">
         <div class="owl-item">
             <div class="col-sm-12">
-            <div class="client-logo"><img src="assets/images/client-logo-dark-1.png" alt="Client Logo"/></div>
+            <div class="client-logo"><img src="{{asset('/uploads/images/trong suốt(đen)-01.png')}}" alt="Client Logo"/></div>
             </div>
         </div>
         <div class="owl-item">
             <div class="col-sm-12">
-            <div class="client-logo"><img src="assets/images/client-logo-dark-2.png" alt="Client Logo"/></div>
+            <div class="client-logo"><img src="{{asset('/uploads/images/trong suốt(đen)-01.png')}}" alt="Client Logo"/></div>
             </div>
         </div>
         <div class="owl-item">
             <div class="col-sm-12">
-            <div class="client-logo"><img src="assets/images/client-logo-dark-3.png" alt="Client Logo"/></div>
+            <div class="client-logo"><img src="{{asset('/uploads/images/trong suốt(đen)-01.png')}}" alt="Client Logo"/></div>
             </div>
         </div>
         <div class="owl-item">
             <div class="col-sm-12">
-            <div class="client-logo"><img src="assets/images/client-logo-dark-4.png" alt="Client Logo"/></div>
+            <div class="client-logo"><img src="{{asset('/uploads/images/trong suốt(đen)-01.png')}}" alt="Client Logo"/></div>
             </div>
         </div>
         <div class="owl-item">
             <div class="col-sm-12">
-            <div class="client-logo"><img src="assets/images/client-logo-dark-5.png" alt="Client Logo"/></div>
+            <div class="client-logo"><img src="{{asset('/uploads/images/trong suốt(đen)-01.png')}}" alt="Client Logo"/></div>
             </div>
         </div>
         <div class="owl-item">
             <div class="col-sm-12">
-            <div class="client-logo"><img src="assets/images/client-logo-dark-1.png" alt="Client Logo"/></div>
+            <div class="client-logo"><img src="{{asset('/uploads/images/trong suốt(đen)-01.png')}}" alt="Client Logo"/></div>
             </div>
         </div>
         <div class="owl-item">
             <div class="col-sm-12">
-            <div class="client-logo"><img src="assets/images/client-logo-dark-2.png" alt="Client Logo"/></div>
+            <div class="client-logo"><img src="{{asset('/uploads/images/trong suốt(đen)-01.png')}}" alt="Client Logo"/></div>
             </div>
         </div>
         <div class="owl-item">
             <div class="col-sm-12">
-            <div class="client-logo"><img src="assets/images/client-logo-dark-3.png" alt="Client Logo"/></div>
+            <div class="client-logo"><img src="{{asset('/uploads/images/trong suốt(đen)-01.png')}}" alt="Client Logo"/></div>
             </div>
         </div>
         <div class="owl-item">
             <div class="col-sm-12">
-            <div class="client-logo"><img src="assets/images/client-logo-dark-4.png" alt="Client Logo"/></div>
+            <div class="client-logo"><img src="{{asset('/uploads/images/trong suốt(đen)-01.png')}}" alt="Client Logo"/></div>
             </div>
         </div>
         </div>
@@ -201,53 +203,38 @@
     <div class="row">
         <div class="col-sm-3">
         <div class="widget">
-            <h5 class="widget-title font-alt">About Titan</h5>
-            <p>The languages only differ in their grammar, their pronunciation and their most common words.</p>
-            <p>Phone: +1 234 567 89 10</p>Fax: +1 234 567 89 10
+            <h5 class="widget-title font-alt">Thông tin chung</h5>
+            <p>CÔNG TY TNHH JADES HOMME.</p>
+            <p>SĐT: 083 993 7777</p>Địa chỉ: 107B Tôn Đức Thắng - Đống Đa - Hà Nội
             <p>Email:<a href="#">somecompany@example.com</a></p>
         </div>
         </div>
         <div class="col-sm-3">
         <div class="widget">
-            <h5 class="widget-title font-alt">Recent Comments</h5>
+            <h5 class="widget-title font-alt">Chăm sóc khách hàng</h5>
             <ul class="icon-list">
-            <li>Maria on <a href="#">Designer Desk Essentials</a></li>
-            <li>John on <a href="#">Realistic Business Card Mockup</a></li>
-            <li>Andy on <a href="#">Eco bag Mockup</a></li>
-            <li>Jack on <a href="#">Bottle Mockup</a></li>
-            <li>Mark on <a href="#">Our trip to the Alps</a></li>
+            <li><a href="#">Hướng dẫn mua hàng</a></li>
+            <li><a href="#">Chính sách đổi trả</a></li>
+            <li><a href="#">Chính sách bảo hành</a></li>
             </ul>
         </div>
         </div>
         <div class="col-sm-3">
         <div class="widget">
-            <h5 class="widget-title font-alt">Blog Categories</h5>
+            <h5 class="widget-title font-alt">Danh mục sản phẩm</h5>
             <ul class="icon-list">
-            <li><a href="#">Photography - 7</a></li>
-            <li><a href="#">Web Design - 3</a></li>
-            <li><a href="#">Illustration - 12</a></li>
-            <li><a href="#">Marketing - 1</a></li>
-            <li><a href="#">Wordpress - 16</a></li>
+            <li><a href="#">Áo</a></li>
+            <li><a href="#">Quần</a></li>
+            <li><a href="#">Phụ kiện</a></li>
             </ul>
         </div>
         </div>
         <div class="col-sm-3">
         <div class="widget">
-            <h5 class="widget-title font-alt">Popular Posts</h5>
+            <h5 class="widget-title font-alt">Liên kết</h5>
             <ul class="widget-posts">
             <li class="clearfix">
-                <div class="widget-posts-image"><a href="#"><img src="assets/images/rp-1.jpg" alt="Post Thumbnail"/></a></div>
-                <div class="widget-posts-body">
-                <div class="widget-posts-title"><a href="#">Designer Desk Essentials</a></div>
-                <div class="widget-posts-meta">23 january</div>
-                </div>
-            </li>
-            <li class="clearfix">
-                <div class="widget-posts-image"><a href="#"><img src="assets/images/rp-2.jpg" alt="Post Thumbnail"/></a></div>
-                <div class="widget-posts-body">
-                <div class="widget-posts-title"><a href="#">Realistic Business Card Mockup</a></div>
-                <div class="widget-posts-meta">15 February</div>
-                </div>
+                <div class="fb-page" data-href="https://www.facebook.com/JadesHomme" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/JadesHomme" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/JadesHomme">JadesHomme</a></blockquote></div>
             </li>
             </ul>
         </div>
@@ -260,10 +247,14 @@
     <div class="container">
     <div class="row">
         <div class="col-sm-6">
-        <p class="copyright font-alt">&copy; 2017&nbsp;<a href="index.html">TitaN</a>, All Rights Reserved</p>
+        <p class="copyright font-alt">&copy; 2022&nbsp;<a href="index.html">Thiết kế, xây dựng website cho doanh nghiệp</a>,
+             Liên hệ : 0969690331</p>
         </div>
         <div class="col-sm-6">
-        <div class="footer-social-links"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i class="fa fa-skype"></i></a>
+        <div class="footer-social-links"><a href="https://www.facebook.com/JadesHomme">
+            <i class="fa fa-facebook"></i></a>
+            {{-- <a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i class="fa fa-skype"></i> --}}
+            </a>
         </div>
         </div>
     </div>
@@ -271,4 +262,5 @@
 </footer>
 </div>
 @endsection
+
 
