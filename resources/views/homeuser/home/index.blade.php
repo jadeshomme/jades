@@ -1,8 +1,7 @@
 @extends('homeuser.layout.master')
 @section('home')
 @include('homeuser.layout.slide')
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0&appId=626607088332555&autoLogAppEvents=1" nonce="0TVi6bkr"></script>
+
 <div class="main">
     <section class="module-small">
       <div class="container">
@@ -17,7 +16,7 @@
                 <div class="col-sm-6 col-md-3 col-lg-3">
                     <div class="shop-item">
                     <div class="shop-item-image"><img src="{{asset('/uploads/images/'.$product_2->product_img.'')}}" alt="{{$product_2->product_name}}"/>
-                        <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket">Add To Cart</span></a></div>
+                        <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket">Thêm giỏ hàng</span></a></div>
                     </div>
                     <h4 class="shop-item-title font-alt"><a href="/home/product-detail/{{$product_2->id}}">{{$product_2->product_name}}</a></h4>{{number_format($product_2->price_sale,0,'','.')}}đ
                     </div>
@@ -39,7 +38,7 @@
         </div>
     </div>
     </div>
-    <div class="video-player" data-property="{videoURL:'https://www.youtube.com/watch?v=D0_JszR9cuA', containment:'.module-video', startAt:0, mute:true, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
+    <div class="video-player" data-property="{videoURL:'https://www.youtube.com/watch?v=D0_JszR9cuA', containment:'.module-video', startAt:0, mute:true, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:225}"></div>
 </section>
 <section class="module">
     <div class="container">
@@ -198,68 +197,9 @@
     </div>
     </div>
 </section>
-<div class="module-small bg-dark">
-    <div class="container">
-    <div class="row">
-        <div class="col-sm-3">
-        <div class="widget">
-            <h5 class="widget-title font-alt">Thông tin chung</h5>
-            <p>CÔNG TY TNHH JADES HOMME.</p>
-            <p>SĐT: 083 993 7777</p>Địa chỉ: 107B Tôn Đức Thắng - Đống Đa - Hà Nội
-            <p>Email:<a href="#">somecompany@example.com</a></p>
-        </div>
-        </div>
-        <div class="col-sm-3">
-        <div class="widget">
-            <h5 class="widget-title font-alt">Chăm sóc khách hàng</h5>
-            <ul class="icon-list">
-            <li><a href="#">Hướng dẫn mua hàng</a></li>
-            <li><a href="#">Chính sách đổi trả</a></li>
-            <li><a href="#">Chính sách bảo hành</a></li>
-            </ul>
-        </div>
-        </div>
-        <div class="col-sm-3">
-        <div class="widget">
-            <h5 class="widget-title font-alt">Danh mục sản phẩm</h5>
-            <ul class="icon-list">
-            <li><a href="#">Áo</a></li>
-            <li><a href="#">Quần</a></li>
-            <li><a href="#">Phụ kiện</a></li>
-            </ul>
-        </div>
-        </div>
-        <div class="col-sm-3">
-        <div class="widget">
-            <h5 class="widget-title font-alt">Liên kết</h5>
-            <ul class="widget-posts">
-            <li class="clearfix">
-                <div class="fb-page" data-href="https://www.facebook.com/JadesHomme" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/JadesHomme" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/JadesHomme">JadesHomme</a></blockquote></div>
-            </li>
-            </ul>
-        </div>
-        </div>
-    </div>
-    </div>
-</div>
-<hr class="divider-d">
-<footer class="footer bg-dark">
-    <div class="container">
-    <div class="row">
-        <div class="col-sm-6">
-        <p class="copyright font-alt">&copy; 2022&nbsp;<a href="index.html">Thiết kế, xây dựng website cho doanh nghiệp</a>,
-             Liên hệ : 0969690331</p>
-        </div>
-        <div class="col-sm-6">
-        <div class="footer-social-links"><a href="https://www.facebook.com/JadesHomme">
-            <i class="fa fa-facebook"></i></a>
-            {{-- <a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i class="fa fa-skype"></i> --}}
-            </a>
-        </div>
-        </div>
-    </div>
-    </div>
-</footer>
+
+@include('homeuser.layout.footer')
+
 </div>
 @endsection
 

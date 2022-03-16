@@ -55,6 +55,8 @@
     <!-- YOUR CUSTOM CSS -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+
+
     <style>
         header.version_1 .main_header {
             background-color: #ffffff;
@@ -70,6 +72,8 @@
 
 <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
     @include('elements.loading')
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0&appId=626607088332555&autoLogAppEvents=1" nonce="0TVi6bkr"></script>
     <main>
         <div class="page-loader">
           <div class="loader">Loading...</div>
