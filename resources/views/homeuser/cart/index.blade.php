@@ -1,136 +1,111 @@
 @extends('homeuser.layout.master')
-@section('link')
-    <link href="{{asset('/pageuser/css/cart.css')}}" rel="stylesheet">
-    <style>
-        .table.cart-list td .numbers {
-            background-color: #fff;
-        }
-        .numbers {
-            position: relative;
-            width: 100%;
-            height: 40px;
-            overflow: visible;
-            border: 1px solid #dddddd;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            -ms-border-radius: 3px;
-            border-radius: 3px;
-            background-color: #fff;
-            text-align: left !important;
-        }
-    </style>
-@endsection
 @section('home')
-    @include('elements.show_error')
+<style>
+    .navbar-custom {
+        background-color: rgba(10, 10, 10, 0.9) !important;
+    }
+    .navbar-transparent {
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+</style>
 
-    <div class="container margin_30">
-    <div class="page_header">
-        <div class="breadcrumbs">
-            <ul>
-                <li><a href="/home">Trang chủ</a></li>
-                <li><a href="/home/show-cart">Giỏ hàng</a></li>
-            </ul>
+@include('elements.show_error')
+
+<?php
+    $content = Cart::content();
+
+?>
+<div class="main">
+    <section class="module">
+        <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+            <h1 class="module-title font-alt">Chi tiết giỏ hàng</h1>
+            </div>
         </div>
-        <h1>Chi tiết giỏ hàng</h1>
-    </div>
-    <?php
-        $content = Cart::content();
-
-    ?>
-    <!-- /page_header -->
-    <table class="table table-striped cart-list">
-        <thead>
-            <tr>
-                <th>
-                    Sản phẩm
-                </th>
-                <th>
-                    Đơn giá
-                </th>
-                <th>
-                    Số lượng
-                </th>
-                <th>
-                    Thành tiền
-                </th>
-                <th>
-
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($content as $v_content)
+        <hr class="divider-w pt-20">
+        <div class="row">
+            <div class="col-sm-12">
+            <table class="table table-striped table-border checkout-table">
+                <tbody>
                 <tr>
-                    <td>
-                        <div class="thumb_cart">
-                            <img src="{{asset('/uploads/images/'.$v_content->options->image.'')}}" data-src="{{asset('/uploads/images/'.$v_content->options->image.'')}}" class="lazy" alt="Image">
-                        </div>
-                        <span class="item_cart">{{$v_content->name}}</span>
-                    </td>
-                    <td>
-                        <strong>{{number_format($v_content->price).' vnd'}}</strong>
-                    </td>
-                    <td>
-                        <div class="numbers">
-                            <input type="number" value="{{$v_content->qty}}" id="qty_{{$v_content->rowId}}" class="qty2" name="qty">
-                            <div class="inc button_inc" row-id="{{$v_content->rowId}}">+</div>
-                            <div class="dec button_inc" row-id="{{$v_content->rowId}}">-</div>
-                        </div>
-                    </td>
-                    <td>
-                        <strong>{{number_format($v_content->price * $v_content->qty).' vnd'}}</strong>
-                    </td>
-                    <td class="options">
-                        <a type="button" class="delete_cart" data-id="{{$v_content->rowId}}"><i class="ti-trash"></i></a>
-                    </td>
+                    <th class="hidden-xs">Ảnh</th>
+                    <th>Sản phẩm</th>
+                    <th class="hidden-xs">Giá tiền</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                    <th>Xoá</th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
-
-        <div class="row add_top_30 flex-sm-row-reverse cart_actions">
-            {{-- <div class="col-sm-4 text-right">
-                <button type="button" class="btn_1 gray">Update Cart</button>
-            </div>
-                <div class="col-sm-8">
-                <div class="apply-coupon">
-                    <div class="form-group form-inline">
-                        <input type="text" name="coupon-code" value="" placeholder="Promo code" class="form-control"><button type="button" class="btn_1 outline">Apply Coupon</button>
-                    </div>
-                </div>
-            </div> --}}
-        </div>
-                <!-- /cart_actions -->
-
-    </div>
-    <!-- /container -->
-    @if (count($content)>0)
-        <div class="box_cart">
-            <div class="container">
-            <div class="row justify-content-end">
-                <div class="col-xl-4 col-lg-4 col-md-6">
-            <ul>
-                <li>
-                    <span>Tổng giá trị đơn hàng</span> {{Cart::subtotal().' '.'vnd'}}
-                </li>
-                {{-- <li>
-                    <span>Shipping</span> $7.00
-                </li> --}}
-                <li>
-                    <span>Thanh Toán</span> {{Cart::subtotal().' '.'vnd'}}
-                </li>
-            </ul>
-
-                <a href="/home/checkout" class="btn_1 full-width cart">Thanh Toán</a>
-
-            {{-- <a href="/home/checkout" class="btn_1 full-width cart">Thanh Toán</a> --}}
-                    </div>
-                </div>
+                @foreach($content as $v_content)
+                    <tr>
+                        <td class="hidden-xs"><a href="#"><img src="{{asset('/uploads/images/'.$v_content->options->image.'')}}" alt="Accessories Pack"/></a></td>
+                        <td>
+                        <h5 class="product-title font-alt">{{$v_content->name}}</h5>
+                        </td>
+                        <td class="hidden-xs">
+                        <h5 class="product-title font-alt">{{number_format($v_content->price).' vnd'}}</h5>
+                        </td>
+                        <td>
+                        <div class="dec button_inc" row-id="{{$v_content->rowId}}">-</div>
+                        <input class="form-control qty2" type="number" id="qty_{{$v_content->rowId}}" name="qty" value="{{$v_content->qty}}" max="50" min="1"/>
+                        <div class="inc button_inc" row-id="{{$v_content->rowId}}">+</div>
+                        </td>
+                        <td>
+                        <h5 class="product-title font-alt">{{number_format($v_content->price * $v_content->qty).' vnd'}}</h5>
+                        </td>
+                        <td class="pr-remove"><a type="button" class="delete_cart" data-id="{{$v_content->rowId}}" title="Xoá"><i class="fa fa-times"></i></a></td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
             </div>
         </div>
-    @endif
+        <div class="row">
+            <div class="col-sm-3">
+            <div class="form-group">
+                <a href="/" class="btn btn-round btn-g" type="button">Tiếp tục mua sản phẩm</a>
+            </div>
+            </div>
+            <div class="col-sm-3">
+            <div class="form-group">
+                {{-- <input class="form-control" type="text" id="" name="" placeholder="Coupon code"/> --}}
+            </div>
+            </div>
+            <div class="col-sm-3 col-sm-offset-3">
+            <div class="form-group">
+                {{-- <button class="btn btn-block btn-round btn-d pull-right" type="submit">Update Cart</button> --}}
+            </div>
+            </div>
+        </div>
+        <hr class="divider-w">
+        @if (count($content)>0)
+            <div class="row mt-70">
+                <div class="col-sm-5 col-sm-offset-7">
+                <div class="shop-Cart-totalbox">
+                    <h4 class="font-alt">Giá trị đơn hàng</h4>
+                    <table class="table table-striped table-border checkout-table">
+                    <tbody>
+                        <tr>
+                        <th>Tổng giá trị đơn hàng :</th>
+                        <td>{{Cart::subtotal().' '.'vnd'}}</td>
+                        </tr>
+                        <tr class="shop-Cart-totalprice">
+                        <th>Thanh toán :</th>
+                        <td>{{Cart::subtotal().' '.'vnd'}}</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                    <a href="/home/checkout" class="btn btn-lg btn-block btn-round btn-d" type="button">Thanh Toán</a>
+                </div>
+                </div>
+            </div>
+        @endif
+        </div>
+    </section>
+    @include('homeuser.layout.footer')
 
-    <!-- /box_cart -->
+</div>
 
 
 @endsection
@@ -211,7 +186,7 @@
             }
         }).then(function (response) {
             Toastr.success(response.data);
-            location.reload();
+            // location.reload();
         }).catch(function(error) {
             Toastr.error(error.response.data);
         }).finally(function() {

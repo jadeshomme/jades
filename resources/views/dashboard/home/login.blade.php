@@ -165,7 +165,7 @@
                     }).then(function (response) {
                         $('.cards').html('');
                         $('.cards').html('<div class="mb-20">\n' +
-                            '\t\t\t\t\t\t\t\t<h3 class="opacity-40 font-weight-normal">Cty Cổ Phần MacTree</h3>\n' +
+                            '\t\t\t\t\t\t\t\t<h3 class="opacity-40 font-weight-normal">Cty Cổ Phần Jades Homme</h3>\n' +
                             '\t\t\t\t\t\t\t\t<p class="opacity-40">Nhập mã xác thực vừa gửi dến mail của bạn</p>\n' +
                             '\t\t\t\t\t\t\t</div>\n' +
                             '\t\t\t\t\t\t\t<div id="kt_login_forgot_form">\n' +
@@ -198,7 +198,7 @@
                         }
                     }).then(function (response) {
                         Toastr.success(response.data);
-                        window.location='/';
+                        window.location='/admin-manager';
                     }).catch(function(error) {
                         Toastr.error(error.response.data);
                     }).finally(function() {

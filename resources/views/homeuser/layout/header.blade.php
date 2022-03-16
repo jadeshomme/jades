@@ -5,7 +5,7 @@
       </div>
       <div class="collapse navbar-collapse" id="custom-collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Home</a>
+          <li class="dropdown"><a class="dropdown-toggle" href="/" data-toggle="dropdown">Home</a>
             <ul class="dropdown-menu">
               <li><a href="/home">Trang chủ</a></li>
             </ul>
@@ -27,57 +27,6 @@
             </ul>
         @endforeach
         </li>
-        {{-- <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Pages</a>
-        <ul class="dropdown-menu">
-            <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">About</a>
-            <ul class="dropdown-menu">
-                <li><a href="about1.html">About 1</a></li>
-                <li><a href="about2.html">About 2</a></li>
-                <li><a href="about3.html">About 3</a></li>
-                <li><a href="about4.html">About 4</a></li>
-                <li><a href="about5.html">About 5</a></li>
-            </ul>
-            </li>
-            <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Services</a>
-            <ul class="dropdown-menu">
-                <li><a href="service1.html">Service 1</a></li>
-                <li><a href="service2.html">Service 2</a></li>
-                <li><a href="service3.html">Service 3</a></li>
-            </ul>
-            </li>
-            <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Pricing</a>
-            <ul class="dropdown-menu">
-                <li><a href="pricing1.html">Pricing 1</a></li>
-                <li><a href="pricing2.html">Pricing 2</a></li>
-            </ul>
-            </li>
-            <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Gallery</a>
-            <ul class="dropdown-menu">
-                <li><a href="gallery_col_2.html">2 Columns</a></li>
-                <li><a href="gallery_col_3.html">3 Columns</a></li>
-                <li><a href="gallery_col_4.html">4 Columns</a></li>
-                <li><a href="gallery_col_6.html">6 Columns</a></li>
-            </ul>
-            </li>
-            <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Contact</a>
-            <ul class="dropdown-menu">
-                <li><a href="contact1.html">Contact 1</a></li>
-                <li><a href="contact2.html">Contact 2</a></li>
-                <li><a href="contact3.html">Contact 3</a></li>
-            </ul>
-            </li>
-            <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Restaurant menu</a>
-            <ul class="dropdown-menu">
-                <li><a href="restaurant_menu1.html">Menu 2 Columns</a></li>
-                <li><a href="restaurant_menu2.html">Menu 3 Columns</a></li>
-            </ul>
-            </li>
-            <li><a href="login_register.html">Login / Register</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="404.html">Page 404</a></li>
-        </ul>
-        </li> --}}
-
         <!--li.dropdown.navbar-cart-->
         <!--    a.dropdown-toggle(href='#', data-toggle='dropdown')-->
         <!--        span.icon-basket-->
@@ -125,7 +74,7 @@
         <!--                    |-->
         <!--                    button.search-btn(type='submit')-->
         <!--                        i.fa.fa-search-->
-        <li class="dropdown"><a class="dropdown-toggle" href="documentation.html" data-toggle="dropdown">Hỗ trợ</a>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Hỗ trợ</a>
         <ul class="dropdown-menu">
             <li><a href="documentation.html#contact">Contact Form</a></li>
             <li><a href="documentation.html#reservation">Reservation Form</a></li>
@@ -133,6 +82,28 @@
             <li><a href="documentation.html#gmap">Google Map</a></li>
             <li><a href="documentation.html#plugin">Plugins</a></li>
             <li><a href="documentation.html#changelog">Changelog</a></li>
+        </ul>
+        </li>
+
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-user"></i>
+        </a>
+        <ul class="dropdown-menu">
+            @if ($userHome)
+                <li><a href="/home/profile">Thông tin cá nhân</a></li>
+                <li><a href="/home/order/show">Đơn hàng của tôi</a></li>
+                <li><a href="/home/logout">Đăng xuất</a></li>
+            @else
+                <li><a href="/home/account">Đăng nhập hoặc đăng ký</a></li>
+            @endif
+        </ul>
+        </li>
+
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-shopping-cart"></i>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="/home/show-cart">Xem giỏ hàng</a></li>
         </ul>
         </li>
     </ul>

@@ -27,7 +27,7 @@ class CartController extends Controller
         $product_info = DB::table('product')->where('id',$productId)->first();
 
         $data['id']               = $product_info->id;
-        $data['qty']              = $quantity;
+        $data['qty']              = (int)$quantity;
         $data['name']             = $product_info->product_name;
         $data['price']            = $product_info->price_sale;
         $data['weight']           = '123';
@@ -54,9 +54,9 @@ class CartController extends Controller
     public function update(Request $request)
     {
        $rowId = $request->get('id');
-       $qty   = $request->get('qty');
+       $qty   = (int)$request->get('qty');
 
-       Cart::update($rowId,$qty);
+       Cart::update($rowId,(int)$qty);
        return response('Cập nhập thành công!');
     }
 
