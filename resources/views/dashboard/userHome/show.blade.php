@@ -54,7 +54,7 @@
                     <!--begin::Button-->
                     <!--end::Button-->
                     <!--begin::Button-->
-                    <a href="/userHome/add" class="btn btn-light-primary font-weight-bold ml-2">Thêm mới</a>
+                    <a href="/admin-manager/userHome/add" class="btn btn-light-primary font-weight-bold ml-2">Thêm mới</a>
                     <!--end::Button-->
                     <!--begin::Dropdown-->
                     <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="" data-placement="left" data-original-title="Thêm mới">

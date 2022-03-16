@@ -56,7 +56,7 @@
                             <ul class="nav nav-bold nav-tabs nav-tabs-line nav-tabs-line-3x nav-tabs-line-transparent-white nav-tabs-line-active-border-success mt-3 px-8" role="tablist">
 
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#topbar_notifications_events">Mactree</a>
+                                    <a class="nav-link" data-toggle="tab" href="#topbar_notifications_events">Jades Homme</a>
                                 </li>
 
                             </ul>
