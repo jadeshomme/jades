@@ -251,7 +251,7 @@ a[x-apple-data-detectors] {
                   <td align="left" style="padding:0;Margin:0;width:360px">
                    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                      <tr style="border-collapse:collapse">
-                      <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, \'helvetica neue\', helvetica, sans-serif;line-height:21px;color:#FFFFFF;font-size:14px">Công ty Cổ phận Thương mại Điện tử MACTREE<br>505 Minh Khai, Hai bà Trưng, Hà Nội<br><a target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#FFFFFF;font-size:14px" href="">https://thoangthoang.com</a></p></td>
+                      <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, \'helvetica neue\', helvetica, sans-serif;line-height:21px;color:#FFFFFF;font-size:14px">Công ty cổ phần JADES HOMME<br> 107B Tôn Đức Thắng - Đống Đa - Hà Nội<br><a target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#FFFFFF;font-size:14px" href="">https://jadeshomme.com</a></p></td>
                      </tr>
                    </table></td>
                  </tr>
