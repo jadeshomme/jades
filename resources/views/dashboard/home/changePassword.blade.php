@@ -149,7 +149,7 @@
                         <div class="navi navi-bold navi-hover navi-active navi-link-rounded">
 
                             <div class="navi-item mb-2">
-                                <a href="/profile" class="navi-link py-4">
+                                <a href="/admin-manager/profile" class="navi-link py-4">
                                     <span class="navi-icon mr-2">
                                         <span class="svg-icon">
                                             <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/General/User.svg-->
@@ -168,7 +168,7 @@
                             </div>
 
                             <div class="navi-item mb-2">
-                                <a href="/profile/change-password" class="navi-link py-4 active">
+                                <a href="/admin-manager/profile/change-password" class="navi-link py-4 active">
                                     <span class="navi-icon mr-2">
                                         <span class="svg-icon">
                                             <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Communication/Shield-user.svg-->
