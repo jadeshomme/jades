@@ -156,10 +156,10 @@ class HomeController extends Controller
             $template = config('apps.email_template_login.template');
             $template = str_replace('{$MacTreeCode}',$verification_codes, $template);
             Mail::send([], [], function ($message) use($template,$email_to) {
-                $template = str_replace('{$topImage}', $message->embed('uploads/images/logo_mactree_thaihoang.png'), $template);
-                $template = str_replace('{$bottomImage}', $message->embed('uploads/images/logo_mactree_thaihoang.png'), $template);
+                $template = str_replace('{$topImage}', $message->embed('uploads/images/trong suốt(trắng)-01.png'), $template);
+                $template = str_replace('{$bottomImage}', $message->embed('uploads/images/trong suốt(trắng)-01.png'), $template);
                 $message->to($email_to)
-                    ->subject('[MACTREE]THÔNG BÁO MÃ XÁC THỰC')
+                    ->subject('[JADES HOMME]THÔNG BÁO MÃ XÁC THỰC')
                     ->setBody($template, 'text/html') ;// for HTML rich messages
                  });
 

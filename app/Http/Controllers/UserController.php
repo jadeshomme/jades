@@ -165,10 +165,10 @@ class UserController extends Controller
                  $template = str_replace('{$PassAdminMacTree}', $password, $template);
 
                  Mail::send([], [], function ($message) use($template,$email_to) {
-                     $template = str_replace('{$topImage}', $message->embed('uploads/images/logo_mactree_thaihoang.png'), $template);
-                     $template = str_replace('{$bottomImage}', $message->embed('uploads/images/logo_mactree_thaihoang.png'), $template);
+                    $template = str_replace('{$topImage}', $message->embed('uploads/images/trong suốt(trắng)-01.png'), $template);
+                    $template = str_replace('{$bottomImage}', $message->embed('uploads/images/trong suốt(trắng)-01.png'), $template);
                      $message->to($email_to)
-                         ->subject('[MACTREE]THÔNG BÁO THÔNG TIN TÀI KHOẢN PHẦN MỀM QUẢN LÝ')
+                         ->subject('[JADES HOMME]THÔNG BÁO THÔNG TIN TÀI KHOẢN PHẦN MỀM QUẢN LÝ')
                          ->setBody($template, 'text/html') ;// for HTML rich messages
                  });
 

@@ -44,7 +44,7 @@
                     <!--begin::Button-->
                     <!--end::Button-->
                     <!--begin::Button-->
-                    <a href="/user/add" class="btn btn-light-primary font-weight-bold ml-2">Thêm mới</a>
+                    <a href="/admin-manager/user/add" class="btn btn-light-primary font-weight-bold ml-2">Thêm mới</a>
                     <!--end::Button-->
                     <!--begin::Dropdown-->
                     <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="" data-placement="left" data-original-title="Thêm mới">
@@ -212,7 +212,7 @@
 
                         axios({
                             method: 'post',
-                            url: '/user/delete',
+                            url: '/admin-manager/user/delete',
                             data: {
                                 id:id,
                             }

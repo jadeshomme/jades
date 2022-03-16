@@ -125,7 +125,7 @@ a[x-apple-data-detectors] {
                        </table></td>
                      </tr>
                      <tr style="border-collapse:collapse">
-                      <td align="left" style="padding:0;Margin:0;padding-top:5px"><h3 style="Margin:0;line-height:17px;mso-line-height-rule:exactly;font-family:arial, \'helvetica neue\', helvetica, sans-serif;font-size:14px;font-style:normal;font-weight:normal;color:#333333"><strong>Kính gửi Quý khách,</strong></h3><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, \'helvetica neue\', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px"><br></p><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, \'helvetica neue\', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">Công ty Cổ phần Thương mại Điện tử MACTREE xin trân trọng thông báo quý khách vừa đăng nhập vào hệ thống MACTREE .Dưới đây là mã xác thực của quý khách:</p></td>
+                      <td align="left" style="padding:0;Margin:0;padding-top:5px"><h3 style="Margin:0;line-height:17px;mso-line-height-rule:exactly;font-family:arial, \'helvetica neue\', helvetica, sans-serif;font-size:14px;font-style:normal;font-weight:normal;color:#333333"><strong>Kính gửi Quý khách,</strong></h3><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, \'helvetica neue\', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px"><br></p><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, \'helvetica neue\', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">Công ty Cổ phần JADES HOMME xin trân trọng thông báo quý khách vừa đăng nhập vào hệ thống JADES HOMME .Dưới đây là mã xác thực của quý khách:</p></td>
                      </tr>
                    </table></td>
                  </tr>
@@ -191,7 +191,7 @@ a[x-apple-data-detectors] {
                        </table></td>
                      </tr>
                      <tr style="border-collapse:collapse">
-                      <td align="left" style="padding:0;Margin:0;padding-bottom:5px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, \'helvetica neue\', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">Xin vui lòng không cung cấp mã xác thực này cho bất cứ ai kể cả nhân viên MACTREE</p></td>
+                      <td align="left" style="padding:0;Margin:0;padding-bottom:5px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, \'helvetica neue\', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">Xin vui lòng không cung cấp mã xác thực này cho bất cứ ai kể cả nhân viên JADES HOMME</p></td>
                      </tr>
                      <tr style="border-collapse:collapse">
                       <td align="center" style="padding:0;Margin:0;padding-bottom:5px;padding-left:10px;padding-right:10px;font-size:0">
@@ -202,7 +202,7 @@ a[x-apple-data-detectors] {
                        </table></td>
                      </tr>
                      <tr style="border-collapse:collapse">
-                      <td align="left" style="padding:0;Margin:0;padding-top:5px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, \'helvetica neue\', helvetica, sans-serif;line-height:18px;color:#333333;font-size:12px"><b><i>Thông tin hỗ trợ dịch vụ:</i></b><br><i><b>Email: </b>thuannv@vatgia.com<b>Hotline:</b>0969690331</i></p></td>
+                      <td align="left" style="padding:0;Margin:0;padding-top:5px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, \'helvetica neue\', helvetica, sans-serif;line-height:18px;color:#333333;font-size:12px"><b><i>Thông tin hỗ trợ dịch vụ:</i></b><br><i><b>Email: </b> jadeshomme86@gmail.com <b>Hotline:</b> 083 993 7777</i></p></td>
                      </tr>
                    </table></td>
                  </tr>

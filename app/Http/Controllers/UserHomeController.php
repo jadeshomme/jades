@@ -121,9 +121,9 @@ class UserHomeController extends Controller
 
         if ($customer->wasRecentlyCreated == true) {
 
-            $subject  = "Mật khẩu được gửi từ MacTree";
+            $subject  = "Mật khẩu được gửi từ JADES HOMME";
             $email_to = $request->get('email');
-            $content  = '<p><b>Công cty cổ phần MacTree</b></p>
+            $content  = '<p><b>Công cty cổ phần JADES HOMME</b></p>
                     <p><b>Mật khẩu của bạn là</b>:'.$password.'</p>';
 
             MailHelper::sendEmail($subject,$email_to,$content);
