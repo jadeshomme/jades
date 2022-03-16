@@ -19,7 +19,7 @@ class MailHelper
     */
     public static function sendEmail($subject, $emailTo, $content, $emailCC = [], $linkAttach = '', $contentType = 'text/html') {
         Mail::send([], [], function ($message) use($subject, $emailTo, $content, $linkAttach, $emailCC, $contentType) {
-            $message->from(env('MAIL_USERNAME', 'MacTree'))
+            $message->from(env('MAIL_USERNAME', 'Jades Homme'))
                 ->to($emailTo)
                 ->cc($emailCC)
                 ->subject($subject)
