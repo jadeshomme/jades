@@ -44,7 +44,7 @@
                     </svg>
                     <!--end::Svg Icon-->
                 </span>
-                <a href="/order" class="text-warning font-weight-bold font-size-h6">Doanh Thu 7 ngày gần đây: {{ number_format($count_total) }}đ</a>
+                <a href="/admin-manager/order" class="text-warning font-weight-bold font-size-h6">Doanh Thu 7 ngày gần đây: {{ number_format($count_total) }}đ</a>
             </div>
             <div class="col bg-light-primary px-6 py-8 rounded-xl mb-7">
 
@@ -59,7 +59,7 @@
                     </svg>
                     <!--end::Svg Icon-->
                 </span>
-                <a href="/userHome" class="text-primary font-weight-bold font-size-h6 mt-2">Người dùng:  {{$count_user}}</a>
+                <a href="/admin-manager/userHome" class="text-primary font-weight-bold font-size-h6 mt-2">Người dùng:  {{$count_user}}</a>
 
             </div>
         </div>
@@ -79,7 +79,7 @@
                     <!--end::Svg Icon-->
                 </span>
 
-                <a href="/order" class="text-danger font-weight-bold font-size-h6 mt-2">Tổng đơn hàng : {{$get_order}}</a>
+                <a href="/admin-manager/order" class="text-danger font-weight-bold font-size-h6 mt-2">Tổng đơn hàng : {{$get_order}}</a>
             </div>
             <div class="col bg-light-success px-6 py-8 rounded-xl">
                 <span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
@@ -93,7 +93,7 @@
                     </svg>
                     <!--end::Svg Icon-->
                 </span>
-                <a href="/product" class="text-success font-weight-bold font-size-h6 mt-2">Sản phẩm: {{$get_product}}</a>
+                <a href="/admin-manager/product" class="text-success font-weight-bold font-size-h6 mt-2">Sản phẩm: {{$get_product}}</a>
             </div>
         </div>
         <!--end::Row-->
