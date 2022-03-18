@@ -86,7 +86,7 @@ class HomePageController extends Controller
 
             $html='';
             foreach($data_district as $index){
-              $html .= "<li data-value=".$index->DistrictID." class='option'>$index->DistrictName</li>";
+              $html .= " <option value=".$index->DistrictID.">$index->DistrictName</option>";
             }
             return $html;
 
@@ -146,7 +146,7 @@ class HomePageController extends Controller
 
             $html='';
             foreach($data_ward as $index){
-              $html .= "<li data-value=".$index->WardCode." class='option'>$index->WardName</li>";
+              $html .= "<option value=".$index->WardCode.">$index->WardName</option>";
             }
             return $html;
 

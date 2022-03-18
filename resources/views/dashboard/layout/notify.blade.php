@@ -1,6 +1,6 @@
 @foreach ($data as $notify)
     @if ($notify->type==2)
-        <a href="/userHome/edit/{{$notify->code}}" class="navi-item update-notify" data-id="{{$notify->id}}">
+        <a href="/admin-manager/userHome/edit/{{$notify->code}}" class="navi-item update-notify" data-id="{{$notify->id}}">
             <div class="navi-link">
                 <div class="navi-icon mr-2">
                     <i class="flaticon2-user flaticon2-line- text-success"></i>
@@ -21,7 +21,7 @@
         <!--end::Item-->
     @else
         <!--begin::Item-->
-        <a href="/order/edit/{{$notify->code}}" class="navi-item update-notify" data-id="{{$notify->id}}">
+        <a href="/admin-manager/order/edit/{{$notify->code}}" class="navi-item update-notify" data-id="{{$notify->id}}">
             <div class="navi-link">
                 <div class="navi-icon mr-2">
                     <i class="flaticon2-supermarket text-warning"></i>

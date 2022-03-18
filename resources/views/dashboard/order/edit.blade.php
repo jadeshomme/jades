@@ -242,7 +242,7 @@
 
         axios({
             method: 'post',
-            url: '/home/district2',
+            url: '/admin-manager/home/district2',
             data: {
                 province_id:province_id,
             }
@@ -265,7 +265,7 @@
 
         axios({
             method: 'post',
-            url: '/home/ward2',
+            url: '/admin-manager/home/ward2',
             data: {
                 district_id:district_id,
             }
@@ -295,7 +295,7 @@
 
         axios({
             method: 'post',
-            url: '/order/update',
+            url: '/admin-manager/order/update',
             data: {
                 id:id,
                 district_id:district_id,
@@ -324,7 +324,7 @@
         var order_codes = $(this).attr('data-ship');
         axios({
             method: 'post',
-            url: '/order/cancelShip',
+            url: '/admin-manager/order/cancelShip',
             data: {
                 id:id,
                 order_codes:order_codes
@@ -349,7 +349,7 @@
         if (ship_id==1) {
             axios({
                 method: 'post',
-                url: '/order/shipFee',
+                url: '/admin-manager/order/shipFee',
                 data: {
                     district_id:district_id,
                     ward_id:ward_id
@@ -386,7 +386,7 @@
         if (ship_id==1) {
             axios({
                 method: 'post',
-                url: '/order/createShip',
+                url: '/admin-manager/order/createShip',
                 data: {
                     id:id,
                     district_id:district_id,

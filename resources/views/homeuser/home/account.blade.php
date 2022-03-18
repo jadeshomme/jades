@@ -44,19 +44,16 @@
                 <hr class="divider-w mb-10">
                 <form class="form">
                   <div class="form-group">
-                    <input class="form-control" id="E-mail" type="text" name="email" placeholder="Email"/>
+                    <input type="email" class="form-control" name="email" id="email_2" placeholder="Email*">
+                </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control full_name" placeholder="Họ Tên*">
                   </div>
                   <div class="form-group">
-                    <input class="form-control" id="username" type="text" name="username" placeholder="Username"/>
-                  </div>
+                    <input type="password" class="form-control" name="password_in_2" id="password_in_2" value="" placeholder="Mật khẩu*">
+                </div>
                   <div class="form-group">
-                    <input class="form-control" id="password" type="password" name="password" placeholder="Password"/>
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control" id="re-password" type="password" name="re-password" placeholder="Re-enter Password"/>
-                  </div>
-                  <div class="form-group">
-                    <button class="btn btn-block btn-round btn-b">Register</button>
+                    <button type="button" class="btn btn-block btn-round btn-b register">Đăng ký</button>
                   </div>
                 </form>
               </div>

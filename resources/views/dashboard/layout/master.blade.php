@@ -263,7 +263,7 @@
         setInterval(function(){ callNotify(1) }, 1000*60);
         function callNotify(status) {
             $.ajax({
-                url: window.location.origin + '/notify',
+                url:  '/admin-manager/notify',
                 type: 'GET',
                 async: true,
                 data: {status:status},
@@ -275,7 +275,7 @@
                             $('.total-notify').html('');
                         }else{
                             $('.total-notify').html(data.count);
-                            $("title").text("("+data.count+")"+"Thông báo mới - Quản lý hệ thống MacTree");
+                            $("title").text("("+data.count+")"+"Thông báo mới - Quản lý hệ thống Jades Homme");
                         }
                     }
                 }, error: function (e) {
