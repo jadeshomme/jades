@@ -316,7 +316,7 @@
             $(document).on("click",".update-notify",function() {
                 var id = $(this).attr('data-id');
                 $.ajax({
-                    url: window.location.origin + '/update-notify',
+                    url: '/admin-manager/update-notify',
                     type: 'POST',
                     data: {
                         _token : "{{ csrf_token() }}",
