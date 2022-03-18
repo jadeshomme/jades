@@ -45,7 +45,7 @@ class PayController extends Controller
         $pay = new Pay;
         $pay -> pay_name = $request->get('pay_name');
         $pay -> pay_code = $request->get('pay_code');
-        $pay -> status = $request->get('status');
+        $pay -> status   = $request->get('status');
         $pay -> save();
 
         if ($pay->wasRecentlyCreated == true) {

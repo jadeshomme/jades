@@ -1,6 +1,27 @@
 @extends('homeuser.layout.master')
 @section('home')
 <style>
+    a.btn_1, .btn_1 {
+        border: none;
+        color: #fff;
+        background: #004dda;
+        outline: none;
+        cursor: pointer;
+        display: inline-block;
+        text-decoration: none;
+        padding: 12px 25px;
+        color: #fff;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        border-radius: 3px;
+        line-height: normal;
+    }
     .navbar-custom {
         background-color: rgba(10, 10, 10, 0.9) !important;
     }
