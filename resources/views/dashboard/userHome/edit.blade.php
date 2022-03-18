@@ -137,14 +137,14 @@
 
             axios({
                 method: 'post',
-                url: '/userHome/update',
+                url: '/admin-manager/userHome/update',
                 data: {
                     id:id,
                     status: status,
                 }
             }).then(function (response) {
                 Toastr.success(response.data);
-                window.location='/userHome';
+                window.location='/admin-manager/userHome';
             }).catch(function(error) {
                 Toastr.error(error.response.data);
             }).finally(function() {

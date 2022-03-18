@@ -81,7 +81,7 @@
 
         axios({
             method: 'post',
-            url: '/ship/update',
+            url: '/admin-manager/ship/update',
             data: {
                 id:id,
                 ship_name: ship_name,
@@ -90,7 +90,7 @@
             }
         }).then(function (response) {
             Toastr.success(response.data);
-            window.location='/ship';
+            window.location='/admin-manager/ship';
         }).catch(function(error) {
             Toastr.error(error.response.data);
         }).finally(function() {

@@ -81,7 +81,7 @@
 
             axios({
                 method: 'post',
-                url: '/permission/update',
+                url: '/admin-manager/permission/update',
                 data: {
                     id:id,
                     permission_name: permission_name,
@@ -90,7 +90,7 @@
                 }
             }).then(function (response) {
                 Toastr.success(response.data);
-                window.location='/permission';
+                window.location='/admin-manager/permission';
             }).catch(function(error) {
                 Toastr.error(error.response.data);
             }).finally(function() {

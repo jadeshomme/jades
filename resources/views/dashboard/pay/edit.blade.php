@@ -82,7 +82,7 @@
 
         axios({
             method: 'post',
-            url: '/pay/update',
+            url: '/admin-manager/pay/update',
             data: {
                 id:id,
                 pay_name: pay_name,
@@ -91,7 +91,7 @@
             }
         }).then(function (response) {
             Toastr.success(response.data);
-            window.location='/pay';
+            window.location='/admin-manager/pay';
         }).catch(function(error) {
             Toastr.error(error.response.data);
         }).finally(function() {

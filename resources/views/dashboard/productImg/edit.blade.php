@@ -99,7 +99,7 @@
         });
         axios({
             method: 'post',
-            url: '/product/editPostImg',
+            url: '/admin-manager/product/editPostImg',
             data: {
                 img: img,
                 id: id,

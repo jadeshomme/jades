@@ -158,14 +158,14 @@
 
             axios({
                 method: 'post',
-                url: '/user/update',
+                url: '/admin-manager/user/update',
                 data: {
                     id:id,
                     permission: permission,
                 }
             }).then(function (response) {
                 Toastr.success(response.data);
-                window.location='/user';
+                window.location='/admin-manager/user';
             }).catch(function(error) {
                 Toastr.error(error.response.data);
             }).finally(function() {

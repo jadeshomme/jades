@@ -81,7 +81,7 @@
 
         axios({
             method: 'post',
-            url: '/category/update',
+            url: '/admin-manager/category/update',
             data: {
                 id:id,
                 category_name: category_name,
@@ -90,7 +90,7 @@
             }
         }).then(function (response) {
             Toastr.success(response.data);
-            window.location='/category';
+            window.location='/admin-manager/category';
         }).catch(function(error) {
             Toastr.error(error.response.data);
         }).finally(function() {
