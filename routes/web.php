@@ -180,6 +180,10 @@ Route::group(['prefix' => 'home'], function () {
         Route::get('/show', 'ShowOrderHomeController@index')->name('homePage.order.show');
     });
 
+    Route::get('/contact', 'ContactController@index')->name('homePage.contact.index');
+
+    Route::post('/contact', 'ContactController@create')->name('homePage.contact.create');
+
 });
 
 

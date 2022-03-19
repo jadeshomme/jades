@@ -74,14 +74,9 @@
         <!--                    |-->
         <!--                    button.search-btn(type='submit')-->
         <!--                        i.fa.fa-search-->
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Hỗ trợ</a>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Liên hệ</a>
         <ul class="dropdown-menu">
-            <li><a href="documentation.html#contact">Contact Form</a></li>
-            <li><a href="documentation.html#reservation">Reservation Form</a></li>
-            <li><a href="documentation.html#mailchimp">Mailchimp</a></li>
-            <li><a href="documentation.html#gmap">Google Map</a></li>
-            <li><a href="documentation.html#plugin">Plugins</a></li>
-            <li><a href="documentation.html#changelog">Changelog</a></li>
+            <li><a href="/home/contact">Liên hệ với chúng tôi</a></li>
         </ul>
         </li>
 
