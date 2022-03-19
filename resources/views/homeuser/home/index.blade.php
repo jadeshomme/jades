@@ -12,15 +12,20 @@
         </div>
         @foreach ($get_product as $product_2)
             @if ($product_2->status == 1 && $product_2->collection==2)
-                <div class="row multi-columns-row">
-                <div class="col-sm-6 col-md-3 col-lg-3">
-                    <div class="shop-item">
-                    <div class="shop-item-image"><img src="{{asset('/uploads/images/'.$product_2->product_img.'')}}" alt="{{$product_2->product_name}}"/>
-                        <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket">Thêm giỏ hàng</span></a></div>
+                <form action="{{ route('homePage.cart.save') }}" method="post">
+                    @csrf
+                    <input name="productId_hidden" type="hidden" value="{{$product_2->id}}" />
+                    <input class="form-control input-lg" type="hidden" name="qty" value="1" max="40" min="1"/>
+                    <div class="row multi-columns-row">
+                    <div class="col-sm-6 col-md-3 col-lg-3">
+                        <div class="shop-item">
+                        <div class="shop-item-image"><img src="{{asset('/uploads/images/'.$product_2->product_img.'')}}" alt="{{$product_2->product_name}}"/>
+                            <div class="shop-item-detail"><button type="submit" class="btn btn-round btn-b"><span class="icon-basket">Thêm giỏ hàng</span></button></div>
+                        </div>
+                        <h4 class="shop-item-title font-alt"><a href="/home/product-detail/{{$product_2->id}}">{{$product_2->product_name}}</a></h4>{{number_format($product_2->price_sale,0,'','.')}}đ
+                        </div>
                     </div>
-                    <h4 class="shop-item-title font-alt"><a href="/home/product-detail/{{$product_2->id}}">{{$product_2->product_name}}</a></h4>{{number_format($product_2->price_sale,0,'','.')}}đ
-                    </div>
-                </div>
+                </form>
             @endif
         @endforeach
 
@@ -30,7 +35,7 @@
     </div>
     </div>
 </section>
-<section class="module module-video bg-dark-30" data-background="">
+<section class="module module-video bg-dark-30" data-background="" style="height: 50vh;">
     <div class="container">
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
