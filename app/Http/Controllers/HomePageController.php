@@ -329,4 +329,61 @@ class HomePageController extends Controller
     }
 
 
+    public function generalPolicy(Request $request)
+    {
+        //  Lấy danh sách sản phẩm
+
+        if ($request->product_name) {
+            $get_product = Product::where('product_name', 'like', '%' . $request->product_name . '%')
+            ->get();
+            $product_name = $request->product_name;
+
+        }else{
+            $get_product = Product::get();
+            $product_name = '';
+        }
+
+
+        $get_slider = DB::table('slider')->where([
+            'status'     => 1,
+        ])->get();
+
+
+
+        return view('homeuser.home.generalPolicy',[
+            'get_product'   => $get_product,
+            'get_slider'    => $get_slider,
+            'product_name'  => $product_name
+        ]);
+    }
+
+    public function privacyPolicy(Request $request)
+    {
+        //  Lấy danh sách sản phẩm
+
+        if ($request->product_name) {
+            $get_product = Product::where('product_name', 'like', '%' . $request->product_name . '%')
+            ->get();
+            $product_name = $request->product_name;
+
+        }else{
+            $get_product = Product::get();
+            $product_name = '';
+        }
+
+
+        $get_slider = DB::table('slider')->where([
+            'status'     => 1,
+        ])->get();
+
+
+
+        return view('homeuser.home.privacyPolicy',[
+            'get_product'   => $get_product,
+            'get_slider'    => $get_slider,
+            'product_name'  => $product_name
+        ]);
+    }
+
+
 }

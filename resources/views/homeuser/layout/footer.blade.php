@@ -14,7 +14,7 @@
             <h5 class="widget-title font-alt">Chính sách</h5>
             <ul class="icon-list">
             <li><a href="/home/privacy-policy">Chính sách bảo mật</a></li>
-            <li><a href="/home/genera-policy">Chính sách chung</a></li>
+            <li><a href="/home/general-policy">Chính sách chung</a></li>
             </ul>
         </div>
         </div>

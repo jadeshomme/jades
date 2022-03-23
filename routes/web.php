@@ -184,6 +184,9 @@ Route::group(['prefix' => 'home'], function () {
 
     Route::post('/contact', 'ContactController@create')->name('homePage.contact.create');
 
+    Route::get('/general-policy', 'HomePageController@generalPolicy')->name('homePage.generalPolicy.index');
+    Route::get('/privacy-policy', 'HomePageController@privacyPolicy')->name('homePage.privacyPolicy.index');
+
 });
 
 
