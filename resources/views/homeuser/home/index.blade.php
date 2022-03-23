@@ -79,7 +79,7 @@
             @if ($product_1->status == 1 && $product_1->collection==1)
                 <div class="mb-sm-20 wow fadeInUp col-sm-6 col-md-3" onclick="wow fadeInUp">
                 <div class="team-item">
-                    <div class="team-image"><img style="width: 263px;height: 260px;" src="{{asset('/uploads/images/'.$product_1->product_img.'')}}" alt="{{$product_1->product_name}}"/>
+                    <div class="team-image"><img style="width: 263px;height: 296px;" src="{{asset('/uploads/images/'.$product_1->product_img.'')}}" alt="{{$product_1->product_name}}"/>
                     <div class="team-detail">
                         <a href="/home/product-detail/{{$product_1->id}}">
                             <p class="font-serif">{{$product_1->product_description}}</p>
