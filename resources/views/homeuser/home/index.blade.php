@@ -161,32 +161,7 @@
         <div class="owl-carousel text-center" data-items="6" data-pagination="false" data-navigation="false">
         <div class="owl-item">
             <div class="col-sm-12">
-            <div class="client-logo"><img src="{{asset('/uploads/images/trong suốt(đen)-01.png')}}" alt="Client Logo"/></div>
-            </div>
-        </div>
-        <div class="owl-item">
-            <div class="col-sm-12">
-            <div class="client-logo"><img src="{{asset('/uploads/images/trong suốt(đen)-01.png')}}" alt="Client Logo"/></div>
-            </div>
-        </div>
-        <div class="owl-item">
-            <div class="col-sm-12">
-            <div class="client-logo"><img src="{{asset('/uploads/images/trong suốt(đen)-01.png')}}" alt="Client Logo"/></div>
-            </div>
-        </div>
-        <div class="owl-item">
-            <div class="col-sm-12">
-            <div class="client-logo"><img src="{{asset('/uploads/images/trong suốt(đen)-01.png')}}" alt="Client Logo"/></div>
-            </div>
-        </div>
-        <div class="owl-item">
-            <div class="col-sm-12">
-            <div class="client-logo"><img src="{{asset('/uploads/images/trong suốt(đen)-01.png')}}" alt="Client Logo"/></div>
-            </div>
-        </div>
-        <div class="owl-item">
-            <div class="col-sm-12">
-            <div class="client-logo"><img src="{{asset('/uploads/images/trong suốt(đen)-01.png')}}" alt="Client Logo"/></div>
+            <div class="client-logo"><img style="height: 165px;" src="{{asset('/uploads/images/fef213c6ef55200b7944.jpg')}}" alt="Client Logo"/></div>
             </div>
         </div>
         <div class="owl-item">

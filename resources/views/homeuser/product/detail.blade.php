@@ -175,7 +175,7 @@
             <div class="row multi-columns-row">
                 <div class="col-sm-6 col-md-3 col-lg-3">
                 <div class="shop-item">
-                    <div class="shop-item-image"><img src="{{asset('/uploads/images/'.$product_lq->product_img.'')}}" alt="{{$product_lq->product_name}}"/>
+                    <div class="shop-item-image"><img style="width: 263px; height: 296px;" src="{{asset('/uploads/images/'.$product_lq->product_img.'')}}" alt="{{$product_lq->product_name}}"/>
                         <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket">Thêm giỏ hàng</span></a></div>
                     </div>
                     <h4 class="shop-item-title font-alt"><a href="/home/product-detail/{{$product_lq->id}}">{{$product_lq->product_name}}</a></h4>{{number_format($product_lq->unit_price,0,'','.')}}đ
