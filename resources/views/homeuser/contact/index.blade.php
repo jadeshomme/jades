@@ -13,7 +13,7 @@
     <section class="module" id="contact">
       <div class="container">
         <div class="row">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.214746497346!2d105.83042855098846!3d21.02409178593212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9c50eabfef%3A0xadd83c5c7a2abc7c!2zMTA3IEIgUC4gVMO0biDEkOG7qWMgVGjhuq9uZywgSMOgbmcgQuG7mXQsIMSQ4buRbmcgxJBhLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1647672079132!5m2!1svi!2s" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.210399533412!2d105.83054415091854!3d21.024265785932144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9c5062807d%3A0xd6ee5c7caaf50b98!2zMTA3IEEgUC4gVMO0biDEkOG7qWMgVGjhuq9uZywgSMOgbmcgQuG7mXQsIMSQ4buRbmcgxJBhLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1648009217154!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
         @include('elements.show_error')
         <div class="row">

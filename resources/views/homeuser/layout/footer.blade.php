@@ -5,17 +5,16 @@
         <div class="widget">
             <h5 class="widget-title font-alt">Thông tin chung</h5>
             <p>CÔNG TY TNHH JADES HOMME.</p>
-            <p>SĐT: 083 993 7777</p>Địa chỉ: 107B Tôn Đức Thắng - Đống Đa - Hà Nội
+            <p>SĐT: 083 993 7777 - 077 778 8866</p>Địa chỉ: 107A Tôn Đức Thắng - Đống Đa - Hà Nội
             <p>Email:<a href="mailto:jadeshomme86@gmail.com"> jadeshomme86@gmail.com</a></p>
         </div>
         </div>
         <div class="col-sm-3">
         <div class="widget">
-            <h5 class="widget-title font-alt">Chăm sóc khách hàng</h5>
+            <h5 class="widget-title font-alt">Chính sách</h5>
             <ul class="icon-list">
-            <li><a href="#">Hướng dẫn mua hàng</a></li>
-            <li><a href="#">Chính sách đổi trả</a></li>
-            <li><a href="#">Chính sách bảo hành</a></li>
+            <li><a href="/home/privacy-policy">Chính sách bảo mật</a></li>
+            <li><a href="/home/genera-policy">Chính sách chung</a></li>
             </ul>
         </div>
         </div>
@@ -31,7 +30,7 @@
         </div>
         <div class="col-sm-3">
         <div class="widget">
-            <h5 class="widget-title font-alt">Liên kết</h5>
+            <h5 class="widget-title font-alt">Kết nối với chúng tôi</h5>
             <ul class="widget-posts">
             <li class="clearfix">
                 <div class="fb-page" data-href="https://www.facebook.com/JadesHomme" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/JadesHomme" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/JadesHomme">JadesHomme</a></blockquote></div>
@@ -47,8 +46,7 @@
     <div class="container">
     <div class="row">
         <div class="col-sm-6">
-        <p class="copyright font-alt">&copy; 2022&nbsp;<a href="/">Thiết kế, xây dựng website cho doanh nghiệp</a>,
-             Liên hệ : 0969690331</p>
+        <p class="copyright font-alt">&copy; 2022&nbsp;<a href="https://www.facebook.com/Technology-House-109976288315039">Thiết kế website bởi Technology House</a> | Bản quyền Jades Homme</p>
         </div>
         <div class="col-sm-6">
         <div class="footer-social-links"><a href="https://www.facebook.com/JadesHomme">
