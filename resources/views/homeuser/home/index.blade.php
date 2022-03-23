@@ -19,7 +19,7 @@
                     <div class="row multi-columns-row">
                     <div class="col-sm-6 col-md-3 col-lg-3">
                         <div class="shop-item">
-                        <div class="shop-item-image"><img src="{{asset('/uploads/images/'.$product_2->product_img.'')}}" alt="{{$product_2->product_name}}"/>
+                        <div class="shop-item-image"><img src="{{asset('/uploads/images/'.$product_2->product_img.'')}}" alt="{{$product_2->product_name}}" width="665" height="750"/>
                             <div class="shop-item-detail"><button type="submit" class="btn btn-round btn-b"><span class="icon-basket">Thêm giỏ hàng</span></button></div>
                         </div>
                         <h4 class="shop-item-title font-alt"><a href="/home/product-detail/{{$product_2->id}}">{{$product_2->product_name}}</a></h4>{{number_format($product_2->price_sale,0,'','.')}}đ
