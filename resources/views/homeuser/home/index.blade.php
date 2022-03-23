@@ -87,7 +87,7 @@
                     </div>
                     </div>
                     <div class="team-descr font-alt">
-                    <div class="team-name">{{$product_1->product_name}}</div>
+                    <div class="team-name"><a href="/home/product-detail/{{$product_1->id}}">{{$product_1->product_name}}</a></div>
                     <div class="team-role">{{number_format($product_1->unit_price,0,'','.')}}đ</div>
                     </div>
                 </div>
