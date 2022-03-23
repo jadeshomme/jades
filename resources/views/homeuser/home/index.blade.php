@@ -97,6 +97,84 @@
       </div>
     </div>
 </section>
+<section class="module bg-dark-60 pt-0 pb-0 parallax-bg testimonial" data-background="{{asset('/uploads/images/horizon-architecture-structure-sky-skyline-night-862294-pxhere.com.jpg')}}">
+    <div class="testimonials-slider pt-140 pb-140">
+      <ul class="slides">
+        <li>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="module-icon"><span class="icon-quote"></span></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8 col-sm-offset-2">
+                <blockquote class="testimonial-text font-alt">Đừng chạy theo xu hướng. Đừng khiến bản thân lệ thuộc vào thời trang. Hãy để chính mình là người quyết định bản thân sẽ mặc gì cũng như sẽ sống ra sao.</blockquote>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4 col-sm-offset-4">
+                <div class="testimonial-author">
+                  <div class="testimonial-caption font-alt">
+                    <div class="testimonial-title">Gianni Versace</div>
+                    <div class="testimonial-descr">Nhà thiết kế thời trang danh tiếng người Ý.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="module-icon"><span class="icon-quote"></span></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8 col-sm-offset-2">
+                <blockquote class="testimonial-text font-alt">Tôi nghĩ rằng vẻ đẹp hiện diện trong tất cả mọi thứ. Những gì mọi người bình thường nhận thức là xấu xí, tôi thường nhìn ngắm được vẻ đẹp đẽ ẩn chứa trong đó.</blockquote>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4 col-sm-offset-4">
+                <div class="testimonial-author">
+                  <div class="testimonial-caption font-alt">
+                    <div class="testimonial-title">ALEXANDER MCQUEEN</div>
+                    <div class="testimonial-descr">Nhà thiết kế thời trang người Anh</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="module-icon"><span class="icon-quote"></span></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8 col-sm-offset-2">
+                <blockquote class="testimonial-text font-alt">Để không ai có thể thay thế, bạn phải luôn luôn khác biệt.</blockquote>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4 col-sm-offset-4">
+                <div class="testimonial-author">
+                  <div class="testimonial-caption font-alt">
+                    <div class="testimonial-title">COCO CHANEL</div>
+                    <div class="testimonial-descr">nhà tạo mẫu người Pháp</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+</section>
 <hr class="divider-w">
 {{-- <section class="module" id="news">
     <div class="container">
