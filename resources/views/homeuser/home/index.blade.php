@@ -59,7 +59,7 @@
         <div class="module-subtitle font-serif">Thời trang rất quan trọng, nó khiến cuộc sống này trở nên tốt đẹp hơn. Và cũng giống như những điều tuyệt vời khác, thời trang xứng đáng được bạn đầu tư công sức chăm chút cẩn thận.</div>
         </div>
     </div>
-    <div class="row">
+    {{-- <div class="row">
         <div class="owl-carousel text-center" data-items="5" data-pagination="false" data-navigation="false">
             @foreach ($get_product as $product_1)
                 @if ($product_1->status == 1 && $product_1->collection==1)
@@ -73,7 +73,28 @@
                 @endif
             @endforeach
         </div>
-    </div>
+    </div> --}}
+    <div class="row">
+        @foreach ($get_product as $product_1)
+            @if ($product_1->status == 1 && $product_1->collection==1)
+                <div class="mb-sm-20 wow fadeInUp col-sm-6 col-md-3" onclick="wow fadeInUp">
+                <div class="team-item">
+                    <div class="team-image"><img style="width: 263px;height: 260px;" src="{{asset('/uploads/images/'.$product_1->product_img.'')}}" alt="{{$product_1->product_name}}"/>
+                    <div class="team-detail">
+                        <a href="/home/product-detail/{{$product_1->id}}">
+                            <p class="font-serif">{{$product_1->product_description}}</p>
+                        </a>
+                    </div>
+                    </div>
+                    <div class="team-descr font-alt">
+                    <div class="team-name">{{$product_1->product_name}}</div>
+                    <div class="team-role">{{number_format($product_1->unit_price,0,'','.')}}đ</div>
+                    </div>
+                </div>
+                </div>
+            @endif
+        @endforeach
+      </div>
     </div>
 </section>
 <hr class="divider-w">
