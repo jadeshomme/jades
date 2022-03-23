@@ -1,5 +1,11 @@
 @extends('homeuser.layout.master')
 @section('home')
+<style>
+    .shop-item-image img {
+        width: 263px;
+        height: 296px;
+    }
+</style>
 @include('homeuser.layout.slide')
 
 <div class="main">
@@ -19,7 +25,7 @@
                     <div class="row multi-columns-row">
                     <div class="col-sm-6 col-md-3 col-lg-3">
                         <div class="shop-item">
-                        <div class="shop-item-image"><img src="{{asset('/uploads/images/'.$product_2->product_img.'')}}" alt="{{$product_2->product_name}}" width="665" height="750"/>
+                        <div class="shop-item-image"><img src="{{asset('/uploads/images/'.$product_2->product_img.'')}}" alt="{{$product_2->product_name}}"/>
                             <div class="shop-item-detail"><button type="submit" class="btn btn-round btn-b"><span class="icon-basket">Thêm giỏ hàng</span></button></div>
                         </div>
                         <h4 class="shop-item-title font-alt"><a href="/home/product-detail/{{$product_2->id}}">{{$product_2->product_name}}</a></h4>{{number_format($product_2->price_sale,0,'','.')}}đ
@@ -59,7 +65,7 @@
                 @if ($product_1->status == 1 && $product_1->collection==1)
                     <div class="owl-item">
                         <div class="col-sm-12">
-                        <div class="ex-product"><a href="/home/product-detail/{{$product_1->id}}"><img src="{{asset('/uploads/images/'.$product_1->product_img.'')}}" alt="{{$product_1->product_name}}"/></a>
+                        <div class="ex-product"><a href="/home/product-detail/{{$product_1->id}}"><img style="width: 263px;height: 260px;" src="{{asset('/uploads/images/'.$product_1->product_img.'')}}" alt="{{$product_1->product_name}}"/></a>
                             <h4 class="shop-item-title font-alt"><a href="/home/product-detail/{{$product_1->id}}">{{$product_1->product_name}}</a></h4>{{number_format($product_1->unit_price,0,'','.')}}đ
                         </div>
                         </div>
