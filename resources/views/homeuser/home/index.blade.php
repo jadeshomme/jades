@@ -97,7 +97,7 @@
       </div>
     </div>
 </section>
-<section class="module bg-dark-60 pt-0 pb-0 parallax-bg testimonial" data-background="{{asset('/uploads/images/horizon-architecture-structure-sky-skyline-night-862294-pxhere.com.jpg')}}">
+<section class="module bg-dark-60 pt-0 pb-0 parallax-bg testimonial" data-background="{{asset('/uploads/images/light-blackandwhite-bw-Paris-France-tower-944758-wallhere.com.jpg')}}">
     <div class="testimonials-slider pt-140 pb-140">
       <ul class="slides">
         <li>
