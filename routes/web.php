@@ -69,6 +69,21 @@ Route::group(['prefix' => 'admin-manager','middleware' => 'check.logout'], funct
         Route::post('/addPost', 'SliderController@addPost')->name('dashboard.slider.addPost');
     });
 
+    Route::group(['prefix' => 'news'], function () {
+        Route::get('/add', 'NewsController@add')->name('dashboard.news.add');
+        Route::get('/category', 'NewsController@category')->name('dashboard.newsCategory.category');
+        Route::get('/category/add', 'NewsController@categoryAdd')->name('dashboard.newsCategory.add');
+        Route::get('/category/edit/{id}', 'NewsController@categoryEdit')->name('dashboard.newsCategory.edit');
+        Route::post('/category/update', 'NewsController@categoryEditPost')->name('dashboard.newsCategory.editPost');
+        Route::post('/category/delete', 'NewsController@categoryDelete')->name('dashboard.newsCategory.delete');
+        Route::post('/category/add', 'NewsController@categoryAddPost')->name('dashboard.newsCategory.addPost');
+        Route::get('/', 'NewsController@index')->name('dashboard.news.show');
+        Route::get('/edit/{id}', 'NewsController@edit')->name('dashboard.news.edit');
+        Route::post('/update', 'NewsController@update')->name('dashboard.news.update');
+        Route::post('/delete', 'NewsController@delete')->name('dashboard.news.delete');
+        Route::post('/addPost', 'NewsController@addPost')->name('dashboard.news.addPost');
+    });
+
     Route::group(['prefix' => 'contact'], function () {
         Route::get('/add', 'ContactController@add')->name('dashboard.contact.add');
         Route::get('/', 'ContactController@index')->name('dashboard.contact.show');
