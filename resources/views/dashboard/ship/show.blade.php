@@ -207,7 +207,7 @@
                         Loading.show();
                         axios({
                             method: 'post',
-                            url: '/ship/delete',
+                            url: '/admin-manager/ship/delete',
                             data: {
                                 id:id,
                             }

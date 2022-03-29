@@ -213,7 +213,7 @@
 
                         axios({
                             method: 'post',
-                            url: '/userHome/delete',
+                            url: '/admin-manager/userHome/delete',
                             data: {
                                 id:id,
                             }

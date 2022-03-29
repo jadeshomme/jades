@@ -1,4 +1,5 @@
 @extends('dashboard.layout.master')
+<link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
 <style>
     .label.label-lg {
         font-size: 10px !important;
@@ -10,7 +11,7 @@
             <!--begin::Info-->
             <div class="d-flex align-items-center flex-wrap mr-2">
                 <!--begin::Page Title-->
-                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Danh sách danh mục sản phẩm</h5>
+                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Danh sách tin tức</h5>
                 <!--end::Page Title-->
                 <!--begin::Actions-->
                 <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
@@ -23,7 +24,6 @@
             <!--end::Toolbar-->
         </div>
     </div>
-
     <div class="container">
         <div class="col-xs-12" id="show_success_mss" style="display: none;"></div>
         @include('elements.show_error')
@@ -31,7 +31,7 @@
         <div class="card card-custom">
             <div class="card-header flex-wrap py-5">
                 <div class="card-title">
-                    <h3 class="card-label">Danh mục
+                    <h3 class="card-label">Tin tức
                     <div class="text-muted pt-2 font-size-sm">Số lượng: </div></h3>
                 </div>
                 <div class="card-toolbar">
@@ -113,80 +113,85 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                <table class="table table-separate table-head-custom table-checkable dataTable no-footer dtr-inline" id="kt_datatable" role="grid" aria-describedby="kt_datatable_info">
+                <table class="table table-separate table-head-custom table-checkable dataTable no-footer dtr-inline" id="kt_datatable" role="grid" aria-describedby="kt_datatable_info" style="width: 1066px;">
                     <thead>
                         <tr role="row">
-                            <th>Tên danh mục</th>
-                            <th>Mã danh mục</th>
-                            <th>Trạng thái</th>
-                            <th>Ngày áp dụng</th>
+                            <th class="sorting sorting_asc" tabindex="0" aria-controls="kt_datatable" rowspan="1" colspan="1" style="width: 204px;" aria-label="Agent: activate to sort column descending" aria-sort="ascending">Tiêu đề</th>
+                            <th class="sorting" tabindex="0" aria-controls="kt_datatable" rowspan="1" colspan="1" style="width: 154px;" aria-label="Company Email: activate to sort column ascending">Slug</th>
+                            <th class="sorting" tabindex="0" aria-controls="kt_datatable" rowspan="1" colspan="1" style="width: 100px;" aria-label="Company Agent: activate to sort column ascending">Trạng thái</th>
+                            <th class="sorting" tabindex="0" aria-controls="kt_datatable" rowspan="1" colspan="1" style="width: 155px;" aria-label="Company Name: activate to sort column ascending">Ngày áp dụng</th>
 
                             <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 105px;" aria-label="Actions">Thao tác</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($get_category as $get_categories)
+                    @foreach ($get_new as $news)
                         <tr class="odd">
                             <td class="dtr-control sorting_1" tabindex="0">
                                 <div class="d-flex align-items-center">
+                                    <div class="symbol symbol-50 flex-shrink-0">
+                                        <img src="{{asset('/uploads/images/'.$news->img.'')}}" alt="photo">
+                                    </div>
                                     <div class="ml-3">
-                                        <a href="{{ route('dashboard.category.edit', ['id' => $get_categories->category_code]) }}" class="text-dark-75 font-weight-bold line-height-sm d-block pb-2">{{$get_categories->category_name}}</a>
+                                        <a href="{{ route('dashboard.news.edit', ['id' => $news->id]) }}" class="text-dark-75 font-weight-bold line-height-sm d-block pb-2">{{$news->name}}</a>
                                     </div>
                                 </div>
                             </td>
-                                <td class="">{{$get_categories->category_code}}</td>
-                                @if ($get_categories->status == 1)
-                                    <td><span class="label label-lg font-weight-bold label-light-success label-inline">Hoạt động</span></td>
-                                @else
-                                <td><span class="label label-lg font-weight-bold label-light-danger label-inline">Dừng hoạt động</span></td>
-                                @endif
-                                <td>{{ date('d/m/Y H:i', strtotime($get_categories->updated_at)) }}</td>
-                                <td nowrap="nowrap">
-                                    {{-- <div class="dropdown dropdown-inline">
-                                        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" data-toggle="dropdown">
-                                            <i class="la la-cog"></i>
-                                        </a>
-                                    <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                                        <ul class="nav nav-hoverable flex-column">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">
-                                                <i class="nav-icon la la-edit"></i>
-                                                <span class="nav-text">Edit Details</span></a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">
-                                                    <i class="nav-icon la la-leaf"></i>
-                                                    <span class="nav-text">Update Status</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">
-                                                    <i class="nav-icon la la-print"></i>
-                                                    <span class="nav-text">Print</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        </div>
-                                    </div> --}}
-                                    <a href="{{ route('dashboard.category.edit', ['id' => $get_categories->category_code]) }}" class="btn btn-sm btn-clean btn-icon" title="Edit details">
-                                        <i class="la la-edit"></i>
+                            <td class="">{{$news->slug}}</td>
+                            @if ($news->status == 1)
+                                <td><span class="label label-lg font-weight-bold label-light-success label-inline">Hiển thị</span></td>
+                            @else
+                                <td><span class="label label-lg font-weight-bold label-light-danger label-inline">Không hiển thị</span></td>
+                            @endif
+                            <td>{{ date('d/m/Y H:i', strtotime($news->updated_at)) }}</td>
+                            <td nowrap="nowrap">
+                                {{-- <div class="dropdown dropdown-inline">
+                                    <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" data-toggle="dropdown">
+                                        <i class="la la-cog"></i>
                                     </a>
-                                    <a href="javascript:;" class="btn btn-sm btn-clean btn-icon delete_category" data-id="{{$get_categories->id}}" title="Delete">
-                                        <i class="la la-trash"></i>
-                                    </a>
-                                </td>
+                                <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+                                    <ul class="nav nav-hoverable flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">
+                                            <i class="nav-icon la la-edit"></i>
+                                            <span class="nav-text">Edit Details</span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">
+                                                <i class="nav-icon la la-leaf"></i>
+                                                <span class="nav-text">Update Status</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">
+                                                <i class="nav-icon la la-print"></i>
+                                                <span class="nav-text">Print</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                </div> --}}
+                                <a href="{{ route('dashboard.news.edit', ['id' => $news->id]) }}" class="btn btn-sm btn-clean btn-icon" title="Edit details">
+                                    <i class="la la-edit"></i>
+                                </a>
+                                <a href="javascript:;" class="btn btn-sm btn-clean btn-icon delete_news" data-id="{{$news->id}}" title="Delete">
+                                    <i class="la la-trash"></i>
+                                </a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
+                {{$get_new->links()}}
             </div>
         </div>
+
     </div>
-</div>
+                <!--end: Datatable-->
+    </div>
 </div>
 <!--end::Card-->
 </div>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
 
 @endsection
@@ -197,7 +202,7 @@
 
 
 <script>
-    $(document).on("click",".delete_category",function() {
+    $(document).on("click",".delete_news",function() {
         let id = $(this).attr('data-id');
         $.confirm({
             content: '<p style="color:red;">Bạn có chắc chắn muốn xoá không?</p>',
@@ -207,7 +212,7 @@
                         Loading.show();
                         axios({
                             method: 'post',
-                            url: '/admin-manager/category/delete',
+                            url: '/admin-manager/news/delete',
                             data: {
                                 id:id,
                             }
@@ -233,6 +238,5 @@
     });
 </script>
 
+
 @endsection
-
-

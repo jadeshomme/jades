@@ -207,7 +207,7 @@
                         Loading.show();
                         axios({
                             method: 'post',
-                            url: '/permission/delete',
+                            url: '/admin-manager/permission/delete',
                             data: {
                                 id:id,
                             }

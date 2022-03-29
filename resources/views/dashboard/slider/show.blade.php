@@ -210,7 +210,7 @@
                         Loading.show();
                         axios({
                             method: 'post',
-                            url: '/slider/delete',
+                            url: '/admin-manager/slider/delete',
                             data: {
                                 id:id,
                             }

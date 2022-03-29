@@ -206,7 +206,7 @@
                         Loading.show();
                         axios({
                             method: 'post',
-                            url: '/pay/delete',
+                            url: '/admin-manager/pay/delete',
                             data: {
                                 id:id,
                             }

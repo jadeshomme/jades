@@ -212,7 +212,7 @@
                         Loading.show();
                         axios({
                             method: 'post',
-                            url: '/product/delete',
+                            url: '/admin-manager/product/delete',
                             data: {
                                 id:id,
                             }
