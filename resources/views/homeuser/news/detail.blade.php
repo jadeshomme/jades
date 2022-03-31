@@ -40,7 +40,7 @@
                         @foreach ($news as $new)
                             <li class="clearfix">
                                 <div class="widget-posts-image"><a href="/home/news/post/{{$new->slug}}"><img src="{{asset('/uploads/images/'.$new->img.'')}}" alt="{{$new->name}}"/></a></div>
-                                <div class="widget-posts-body">
+                                <div class="widget-posts-body"></div>
                                 <div class="widget-posts-title"><a href="/home/news/post/{{$new->slug}}">{{$new->name}}</a></div>
                                 <div class="widget-posts-meta">{{$new->updated_at}}</div>
                                 </div>
