@@ -184,50 +184,24 @@
           <div class="module-subtitle font-serif">Những tin tức mới nhất về Jades Homme sẽ được cập nhập 24/7. Quý khách hàng có thể theo dõi bản tin dưới đây</div>
         </div>
       </div>
-      <div class="row multi-columns-row post-columns">
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="post mb-20">
-            <div class="post-thumbnail"><a href="#"><img src="{{asset('/pageuser/images/post-1.jpg')}}" alt="Blog-post Thumbnail"/></a></div>
-            <div class="post-header font-alt">
-              <h2 class="post-title"><a href="#">Đang cập nhập và bảo trì</a></h2>
-              <div class="post-meta">By&nbsp;<a href="#">Mark Stone</a>&nbsp;| 23 November | 3 Comments
-              </div>
+      @foreach ($get_news as $news)
+        <div class="row multi-columns-row post-columns">
+            <div class="col-sm-6 col-md-4 col-lg-4">
+            <div class="post mb-20">
+                <div class="post-thumbnail"><a href="/home/news/post/{{$news->slug}}"><img src="{{asset('/uploads/images/'.$news->img.'')}}" alt="Blog-post Thumbnail"/></a></div>
+                <div class="post-header font-alt">
+                <h2 class="post-title"><a href="/home/news/post/{{$news->slug}}">{{$news->name}}</a></h2>
+                <div class="post-meta">{{$news->updated_at}}
+                </div>
+                </div>
+                <div class="post-entry">
+                <p>{{$news->description}}.</p>
+                </div>
+                <div class="post-more"><a class="more-link" href="/home/news/post/{{$news->slug}}">Đọc tiếp</a></div>
             </div>
-            <div class="post-entry">
-              <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
             </div>
-            <div class="post-more"><a class="more-link" href="#">Read more</a></div>
-          </div>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="post mb-20">
-            <div class="post-thumbnail"><a href="#"><img src="{{asset('/pageuser/images/post-1.jpg')}}" alt="Blog-post Thumbnail"/></a></div>
-            <div class="post-header font-alt">
-              <h2 class="post-title"><a href="#">Đang cập nhập và bảo trì</a></h2>
-              <div class="post-meta">By&nbsp;<a href="#">Andy River</a>&nbsp;| 11 November | 4 Comments
-              </div>
-            </div>
-            <div class="post-entry">
-              <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-            </div>
-            <div class="post-more"><a class="more-link" href="#">Read more</a></div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="post mb-20">
-            <div class="post-thumbnail"><a href="#"><img src="{{asset('/pageuser/images/post-1.jpg')}}" alt="Blog-post Thumbnail"/></a></div>
-            <div class="post-header font-alt">
-              <h2 class="post-title"><a href="#">Đang cập nhập và bảo trì</a></h2>
-              <div class="post-meta">By&nbsp;<a href="#">Dylan Woods</a>&nbsp;| 5 November | 15 Comments
-              </div>
-            </div>
-            <div class="post-entry">
-              <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-            </div>
-            <div class="post-more"><a class="more-link" href="#">Read more</a></div>
-          </div>
-        </div>
-      </div>
+      @endforeach
     </div>
 </section>
 <hr class="divider-w">

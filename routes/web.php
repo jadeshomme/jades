@@ -202,6 +202,11 @@ Route::group(['prefix' => 'home'], function () {
     Route::get('/general-policy', 'HomePageController@generalPolicy')->name('homePage.generalPolicy.index');
     Route::get('/privacy-policy', 'HomePageController@privacyPolicy')->name('homePage.privacyPolicy.index');
 
+
+    Route::group(['prefix' => 'news'], function () {
+        Route::get('/post/{slug}', 'NewsHomeController@index')->name('homePage.news.slug');
+    });
+
 });
 
 

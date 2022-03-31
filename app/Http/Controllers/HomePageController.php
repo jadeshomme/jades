@@ -34,10 +34,13 @@ class HomePageController extends Controller
             'status'     => 1,
         ])->get();
 
-
+        $get_news = DB::table('news')->where([
+            'status'     => 1,
+        ])->get();
 
         return view('homeuser.home.index',[
             'get_product'   => $get_product,
+            'get_news'      => $get_news,
             'get_slider'    => $get_slider,
             'product_name'  => $product_name
         ]);
